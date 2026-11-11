@@ -16,7 +16,7 @@ Every experiment behind the submission, gathered in one place. The final result 
 | `queue.tsv` | The experiment queue as submitted: run id, git ref, `lnc`, time budget, args, env overrides and the hypothesis each run tested. |
 | `logs/<run id>/` | `train.log`, `eval.log` and `meta.txt` for 37 key runs (the chain from baseline to final, plus the informative failures). |
 | `tools/agent.sh`, `tools/run_once.sh` | The runner that executed the queue on the instance. |
-| `tools/make_results.py` | Builds `../results.tsv` from `all_runs.tsv`. |
+| `tools/make_results.py` | Builds `../results.tsv` from `all_runs.tsv`. The runner only records `crash` or `keep_pending`; keep vs discard was judged by hand (see Method notes in the report) and is encoded in the script's `KEEP` set. |
 | `figures/` | Charts used in this README. |
 
 ## How the experiments were run
@@ -73,7 +73,7 @@ Every experiment behind the submission, gathered in one place. The final result 
 | `k_qknorm_d12` | NKI fused RoPE + QK-RMSNorm (self-test + throughput) | Forward 37% faster, 7% more steps |
 | `tp_bf16` | bf16 matmul inputs | 1.52 to 0.79 s/step |
 | `tp_rms2` | NKI fused RMSNorm (forward + backward) | 0.792 vs 0.788 s/step: no gain, kept off |
-| `tp_qkvcat` | Fused QKV matmul | 0.997 vs 0.788 s/step: slower |
+| `tp_qkvcat` | Fused QKV matmul | 0.997 vs 0.788 s/step. **Invalid:** the fused path skipped the bf16 input cast, so its matmul ran in fp32 (fixed later, not re-measured) |
 | `tp_lnc1_ref` / `tp_lnc2_b8` | Launch shape `lnc=1 × 8` vs `lnc=2 × 4` | 1.42 vs 1.68 s/step |
 | `tp_final384` | Per-phase step profile of the final config | 2.70 s/step |
 

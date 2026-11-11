@@ -11,7 +11,7 @@
 - **训练循环提速**：单卡 batch 8、torch.compile 编译模型以及函数式的 Muon/AdamW、学习率改成设备上的 0 维张量（Neuron eager 模式会把 Python 浮点数编进 kernel，每步重编译，从 1.5 秒变 8 秒）。加上 bf16 修复，每秒 token 从 41K 提到 168K，同时模型从深度 10 加到 12。
 - **把速度换成规模**：深度 14（1.496 亿参数）、每步 384K token，由完整 30 分钟的 batch、深度、Muon 学习率扫描确定。
 - **实验系统化**：实例上的 runner 从 git 分支拉取实验队列，逐个运行、评测并把日志和结果推回 GitHub，无需保持 SSH 连接，芯片全天不停。每次运行都是“某个提交 + 环境变量覆盖”，可以从结果表复现。
-- **发现并修复评测陷阱**：影响前向但没存进 checkpoint 的设置在评测时会用默认值。现在 logit softcap 存在模型配置里。
+- **发现并修复评测陷阱**：影响前向但没存进 checkpoint 的设置在评测时会用默认值。现在 logit softcap 以及 bf16 matmul、fused QKV、两个 NKI kernel 开关都存在模型配置里。
 
 ## 目录
 

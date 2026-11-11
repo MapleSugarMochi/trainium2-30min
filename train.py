@@ -51,7 +51,12 @@ from prepare import (
 def _env(name: str, default):
     """Hyperparameter override from the environment (NEURON_HP_<NAME>), for sweeps."""
     raw = os.environ.get(f"NEURON_HP_{name}")
-    return default if raw is None else type(default)(raw)
+    if raw is None:
+        return default
+    if isinstance(default, bool):
+        # bool("0") is True, so parse flags explicitly.
+        return raw.strip().lower() not in ("0", "false", "no", "off", "")
+    return type(default)(raw)
 
 
 SEQ_LEN = _env("SEQ_LEN", 1024)
@@ -165,6 +170,13 @@ class GPTConfig:
     value_resid: bool = False  # every layer's v mixes in layer 0's v (learned 2 scalars per layer)
     unet: bool = False         # U-net skips: layer i's output feeds layer n-1-i (learned weight each)
     logit_softcap: float = 15.0  # tanh softcap on the logits (stored so eval uses the trained value)
+    # Forward-path switches that were env-only (NEURON_HP_*). Stored so load_for_eval
+    # runs the forward the model was trained with, not whatever the eval env says.
+    # Defaults equal the env defaults, so older checkpoints load unchanged.
+    bf16_matmul: bool = True
+    qkv_cat: bool = False
+    nki_qknorm: bool = True
+    nki_rmsnorm: bool = False
 
 
 COMPUTE_DTYPE: torch.dtype = torch.bfloat16
@@ -698,8 +710,11 @@ class CausalSelfAttention(nn.Module):
         b, t, c = x.shape
         if QKV_CAT:
             # One matmul for q, k, v (same parameters, same math; fewer launches).
-            w = torch.cat((self.c_q.weight, self.c_k.weight, self.c_v.weight), dim=0).to(dtype=x.dtype)
-            q, k, v = F.linear(x, w, None).split(c, dim=-1)
+            # This path bypasses Linear.forward, so apply its bf16 input cast here too
+            # (without it the fused matmul silently ran in fp32 on the fp32 residual).
+            xin = x.to(COMPUTE_DTYPE) if BF16_MATMUL else x
+            w = torch.cat((self.c_q.weight, self.c_k.weight, self.c_v.weight), dim=0).to(dtype=xin.dtype)
+            q, k, v = F.linear(xin, w, None).split(c, dim=-1)
             q = q.reshape(b, t, self.n_head, self.head_dim)
             k = k.reshape(b, t, self.n_head, self.head_dim)
             v = v.reshape(b, t, self.n_head, self.head_dim)
@@ -810,11 +825,16 @@ class GPT(nn.Module):
     def estimate_flops(self) -> int:
         """Estimate FLOPs per token (forward + backward). Attention QK^T and AV are O(T) per token."""
         nparams = sum(p.numel() for p in self.parameters())
-        non_matmul = self.transformer.wte.weight.numel() + 2 * self.config.n_layer  # per-block scalars
+        # Parameters that are not matmul weights: the embedding table and the learned
+        # scalars (resid/x0 lambdas, and v_lambda / skip_weights when enabled).
+        non_matmul = self.transformer.wte.weight.numel() + sum(
+            p.numel() for p in self.parameters() if p.dim() < 2)
         h = self.config.n_head
         d = self.config.n_embd // self.config.n_head
         t = self.config.sequence_len
-        # QK^T: 2*h*d*T per token, AV: 2*h*d*T per token, x3 for fwd+bwd
+        # QK^T: 2*h*d*T per token, AV: 2*h*d*T per token, x3 for fwd+bwd.
+        # PaLM convention: the causal mask is not discounted, so this counts the
+        # full T x T score matrix (about 2x the attention work actually needed).
         attn_flops = self.config.n_layer * 12 * h * d * t
         return 6 * (nparams - non_matmul) + attn_flops
 
@@ -839,7 +859,7 @@ class GPT(nn.Module):
         ]
         for shape in sorted({p.shape for p in matrix_params}):
             params = [p for p in matrix_params if p.shape == shape]
-            param_groups.append(dict(kind="muon", params=params, lr=MATRIX_LR, momentum=0.95, beta2=0.90, ns_steps=5, weight_decay=WEIGHT_DECAY))
+            param_groups.append(dict(kind="muon", params=params, lr=MATRIX_LR, momentum=0.95, beta2=BETA2_MUON, ns_steps=5, weight_decay=WEIGHT_DECAY))
         opt = MuonAdamW(param_groups)
         for group in opt.param_groups:
             group["initial_lr"] = group["lr"]
@@ -899,7 +919,20 @@ def build_config(depth: int = DEPTH) -> GPTConfig:
         value_resid=_env("VALUE_RESID", 0) != 0,
         unet=_env("UNET", 0) != 0,
         logit_softcap=float(LOGIT_SOFTCAP),
+        bf16_matmul=BF16_MATMUL,
+        qkv_cat=QKV_CAT,
+        nki_qknorm=USE_NKI_QKNORM,
+        nki_rmsnorm=USE_NKI_RMSNORM,
     )
+
+
+def apply_forward_flags(config: GPTConfig) -> None:
+    """Set the module-level forward switches from a (checkpoint) config."""
+    global BF16_MATMUL, QKV_CAT, USE_NKI_QKNORM, USE_NKI_RMSNORM
+    BF16_MATMUL = bool(config.bf16_matmul)
+    QKV_CAT = bool(config.qkv_cat)
+    USE_NKI_QKNORM = bool(config.nki_qknorm)
+    USE_NKI_RMSNORM = bool(config.nki_rmsnorm)
 
 
 # -----------------------------------------------------------------------------
@@ -914,10 +947,14 @@ POLAR_EXPRESS_COEFFS = [
 ]
 
 
-def muon_core(g, w, momentum_buffer, second, lr, momentum, wd: float, ns_steps: int):
+BETA2_MUON = 0.90  # NorMuon second-moment EMA; the default for each Muon group's beta2
+
+
+def muon_core(g, w, momentum_buffer, second, lr, momentum, wd: float, ns_steps: int, beta2: float = BETA2_MUON):
     """One Muon update on a stack of same-shape matrices, in place on w and the
     optimizer buffers. lr and momentum are 0-d device tensors so the compiled
-    graph never specializes on their values."""
+    graph never specializes on their values. beta2 is a per-run constant (the
+    group's beta2), so specializing on it does not cause recompiles."""
     shape = g.shape
     momentum_buffer.lerp_(g, 1 - momentum)
     g = g.lerp_(momentum_buffer, momentum)
@@ -936,7 +973,7 @@ def muon_core(g, w, momentum_buffer, second, lr, momentum, wd: float, ns_steps: 
     v_mean = g.float().square().mean(dim=red_dim, keepdim=True)
     red_dim_size = g.size(red_dim)
     v_norm = (v_mean.sum(dim=(-2, -1), keepdim=True) * red_dim_size).sqrt()
-    second.lerp_(v_mean, 1 - BETA2_MUON)
+    second.lerp_(v_mean, 1 - beta2)
     step_size = second.clamp_min(1e-10).rsqrt()
     scaled = (v_mean * red_dim_size) * step_size.square()
     v_norm_new = scaled.sum(dim=(-2, -1), keepdim=True).sqrt()
@@ -956,7 +993,6 @@ def adamw_core(params, grads, exp_avgs, exp_avg_sqs, lr, bias1, bias2, wd: float
         p.sub_(update * lr)
 
 
-BETA2_MUON = 0.90
 # Set in main(): torch.compile(muon_core) when NEURON_HP_COMPILE_OPT=1, else eager.
 _MUON_CORE = muon_core
 _ADAMW_CORE = adamw_core
@@ -1045,7 +1081,7 @@ class MuonAdamW(torch.optim.Optimizer):
         torch._foreach_copy_(list(w.unbind(0)), list(params))
         lr = group["lr_t"] * (max(1.0, shape[-2] / shape[-1]) ** 0.5)
         _MUON_CORE(g, w, state["momentum_buffer"], state["second_momentum_buffer"], lr,
-                   group["mom_t"], group["weight_decay"], group["ns_steps"])
+                   group["mom_t"], group["weight_decay"], group["ns_steps"], group["beta2"])
         torch._foreach_copy_(params, list(w.unbind(0)))
 
     @torch.no_grad()
@@ -1122,6 +1158,7 @@ def load_for_eval(checkpoint_path: str, device: torch.device) -> nn.Module:
     COMPUTE_DTYPE = compute_dtype_for(device)
     payload = torch_load_weights(checkpoint_path, map_location="cpu")
     config = GPTConfig(**payload["model_config"])
+    apply_forward_flags(config)
     model = GPT(config)
     model.init_weights()
     model.load_state_dict(payload["model_state"], strict=True)
@@ -1251,9 +1288,10 @@ def main() -> None:
         for _ in range(grad_accum_steps):
             loss = model(synthetic_x, synthetic_y)
             (loss / grad_accum_steps).backward()
+        # Average across ranks first, then clip on the global gradient.
+        sync_gradients(model)
         if GRAD_CLIP > 0:
             torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
-        sync_gradients(model)
         optimizer.step()
         synchronize(device)
         print0("compile-only synthetic training step completed")
@@ -1291,10 +1329,12 @@ def main() -> None:
             x, y, loader_state = next(train_loader)
             timer.lap("data")
 
-        if GRAD_CLIP > 0:
-            torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
+        # Average across ranks first, then clip on the global gradient (clipping
+        # each rank's local gradient by its own norm is not the intended update).
         sync_gradients(model)
         timer.lap("grad_allreduce")
+        if GRAD_CLIP > 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
 
         # Progress through the charged budget. Before the clock restarts at the
         # 5th step boundary this is ~0, so warmdown cannot trigger during compile.
@@ -1314,7 +1354,11 @@ def main() -> None:
         synchronize(device)
         record_step_boundary(step)
         dt = time.monotonic() - t0
-        recent_step_times.append(dt)
+        # Only steady-state steps feed the step-time estimate used by the predictive
+        # stop: the excluded startup steps include compilation, and a long first-step
+        # compile could otherwise end a short run right after the clock restarts.
+        if step >= TRAIN_STARTUP_STEPS_EXCLUDED:
+            recent_step_times.append(dt)
         train_loss = float(last_loss.item())
         if step + 1 == TRAIN_STARTUP_STEPS_EXCLUDED:
             # The runner excludes launch through this boundary (capped), so
@@ -1348,7 +1392,7 @@ def main() -> None:
                 and (
                     elapsed_after_step >= args.max_train_seconds
                     or elapsed_after_step
-                    + max(recent_step_times[-20:])
+                    + max(recent_step_times[-20:], default=dt)
                     + CHECKPOINT_RESERVE_SECONDS
                     >= args.max_train_seconds
                 )

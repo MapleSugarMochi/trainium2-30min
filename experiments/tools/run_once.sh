@@ -7,9 +7,11 @@
 #   id  ref  nc  max_train_seconds  args  env  desc
 #   ref  = branch name on origin (e.g. exp/warmdown) or a commit sha
 #   nc   = 1 (8 procs) or 2 (4 procs)
-#   args = extra train.py args, or "-"
-#   env  = extra env vars "K=V K2=V2", or "-"
+#   args = extra train.py args, space-separated, or "-"
+#   env  = extra env vars "K=V K2=V2", or "-" (values must not contain spaces)
 # Results: pushed to origin/results (runs/<id>/..., all_runs.tsv).
+# The status column is only crash / keep_pending here; keep vs discard was decided
+# by hand afterwards and is applied by tools/make_results.py (its KEEP set).
 set -uo pipefail
 
 WS=/home/ubuntu/workspace
@@ -18,12 +20,14 @@ EXP=$WS/exp
 RES=$WS/results
 CKPT=$WS/ckpt
 VENV=$WS/native_venv/bin/activate
-# Instance is reclaimed 2026-11-11 11:30 UTC; every job must finish by 11:00.
-DEADLINE_EPOCH=$(date -u -d "2026-11-11T11:00:00Z" +%s)
+# Latest time every job must finish by (the instance was reclaimed 2026-11-11 11:30 UTC).
+# Override with RUNNER_DEADLINE_UTC=YYYY-MM-DDTHH:MM:SSZ.
+DEADLINE_UTC=${RUNNER_DEADLINE_UTC:-2026-11-11T11:00:00Z}
 # Wall time beyond max_train_seconds: startup ~90 s + eval ~150 s + pushes (measured 1887-1891 s wall for 1800 s jobs, excl. eval).
 OVERHEAD_S=450
 
 log() { echo "[$(date -u +%FT%TZ)] $*"; }
+DEADLINE_EPOCH=$(date -u -d "$DEADLINE_UTC" +%s) || { log "bad RUNNER_DEADLINE_UTC: $DEADLINE_UTC"; exit 1; }
 
 cd "$REPO" || { log "repo missing"; exit 1; }
 git config user.name >/dev/null || git config user.name "runner"
@@ -143,6 +147,17 @@ commit=$(git -C "$EXP" rev-parse --short HEAD)
 [ "$nc" = "2" ] && np=4 || np=8
 [ "$args" = "-" ] && args=""
 [ "$envs" = "-" ] && envs=""
+# Split into arrays without glob expansion, and reject env entries that are not K=V
+# (a value with a space would otherwise silently become a separate argument).
+read -ra args_arr <<< "$args"
+read -ra env_arr <<< "$envs"
+for kv in "${env_arr[@]}"; do
+  if [[ ! "$kv" =~ ^[A-Za-z_][A-Za-z0-9_]*=.*$ ]]; then
+    d="$RES/runs/$id"; mkdir -p "$d"; echo "bad env entry: $kv" > "$d/error.txt"
+    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$id" "$commit" "$ref" "$nc" "$maxs" "${args:--}" "${envs:--}" "-" "-" "-" "-" "-" "-" "crash" "$desc" >> "$RES/all_runs.tsv"
+    push_results "run $id: bad env"; exit 0
+  fi
+done
 
 d="$RES/runs/$id"; mkdir -p "$d"
 out="$CKPT/$id"; mkdir -p "$out"
@@ -161,9 +176,9 @@ t0=$(date +%s)
 # neuron-monitor for 60 s (power / utilization if the tool reports them).
 ( sleep 600; command -v neuron-monitor >/dev/null && timeout 60 neuron-monitor > "$d/neuron_monitor.jsonl" 2>"$d/neuron_monitor.err"; \
   command -v neuron-ls >/dev/null && neuron-ls > "$d/neuron_ls.txt" 2>&1 ) &
-env $envs NEURON_LOGICAL_NC_CONFIG=$nc timeout $((maxs + 2400)) \
-  torchrun --standalone --nproc_per_node=$np train.py \
-  --max-train-seconds "$maxs" --out-dir "$out" --no-eval-public $args \
+env "${env_arr[@]}" NEURON_LOGICAL_NC_CONFIG="$nc" timeout $((maxs + 2400)) \
+  torchrun --standalone --nproc_per_node="$np" train.py \
+  --max-train-seconds "$maxs" --out-dir "$out" --no-eval-public "${args_arr[@]}" \
   > "$d/train.log" 2>&1
 rc=$?
 t1=$(date +%s)

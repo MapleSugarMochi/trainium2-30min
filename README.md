@@ -26,7 +26,7 @@ A testing task based on Phase 1 of the [AWS Trainium Frontier](https://trainium-
 | Tokens per optimizer step | 65,536 | 393,216 |
 | Steps in 30 min | 1000 | 679 |
 | Tokens per second | 41K | 148K |
-| Model FLOP/s | — | ~149 TFLOP/s (~22% of BF16 peak) |
+| Model FLOP/s | — | ~149 TFLOP/s (~22% of BF16 peak; ~21% if causal attention is counted at half) |
 
 The optimizer is Muon for the matrices (Polar Express orthogonalization, cautious weight decay, LR 0.035) and AdamW for embeddings, lm_head and scalars. The LR decays linearly to zero over the last 60% of the time budget.
 
@@ -58,7 +58,7 @@ NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
 python prepare.py eval-public --train-py train.py --checkpoint out/final.pt
 ```
 
-Every hyperparameter can be overridden with `NEURON_HP_<NAME>`, for example `NEURON_HP_TOTAL_BATCH_SIZE=262144`. See the parameter block at the top of `train.py`.
+Most hyperparameters in the parameter block at the top of `train.py` can be overridden with `NEURON_HP_<NAME>`, for example `NEURON_HP_TOTAL_BATCH_SIZE=262144`. Some constants (`HEAD_DIM`, `MAX_TRAIN_SECONDS`, `CHECKPOINT_RESERVE_SECONDS`) cannot; the time budget is set with `--max-train-seconds`. Forward-path switches (`NEURON_HP_BF16_MATMUL`, `NEURON_HP_QKV_CAT`, `NEURON_HP_NKI_QKNORM`, `NEURON_HP_NKI_RMSNORM`) are stored in the checkpoint config, so evaluation uses the values the model was trained with.
 
 ## Credits and license
 

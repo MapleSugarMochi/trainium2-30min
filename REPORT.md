@@ -49,7 +49,8 @@ Every row is a full 30-minute run on `lnc=1 × 8`, scored with the public eval.
 | Change | Result | Why |
 | --- | --- | --- |
 | Launch shape lnc=2 × 4 procs | 1.68 vs 1.42 s/step | Slower in both phases, also with device batch 16 per logical core. |
-| Other kernels and fusions: example relu², q/k written as `[B,H,T,D]`, NKI RMSNorm, fused QKV, bucketed all-reduce | 0 to +27% step time | The compiler already fuses these, or the extra copies cost more than they save. |
+| Other kernels and fusions: example relu², q/k written as `[B,H,T,D]`, NKI RMSNorm, bucketed all-reduce | 0 to +27% step time | The compiler already fuses these, or the extra copies cost more than they save. |
+| Fused QKV matmul | 0.997 vs 0.788 s/step (**result invalid**) | The fused path bypassed the bf16 input cast in `Linear`, so its matmul ran in fp32: the run measured that bug, not the fusion. Fixed after the instance was reclaimed; not re-measured. |
 | Compiler flags `-O3`, `--model-type=transformer` | within 2% | `-O3` doubled compile time. |
 | Device batch 12 or 16; depth 16 or U-net at device batch 8 | crash | Out of device memory (12 GiB per NeuronCore). |
 | Depth 16 or U-net at device batch 4; depth 15 or 13 at width 896 | 1.0784, 1.0847, 1.0737, 1.0708 | Depth 14 is the 30-minute optimum. |
@@ -58,7 +59,7 @@ Recipe changes on the final config (1.0605), one knob each: weight decay 0.05 (1
 
 ## Where step time goes, and the remaining bottleneck
 
-In the final config the chip runs at about **22% of its BF16 peak**: 1.0 GFLOP per token (from the training log) × 148K tokens/s ≈ 149 TFLOP/s, against about 667 TFLOP/s. The remaining bottleneck is **forward and backward compute made of many mid-sized ops, with device memory capping the per-core batch**. Evidence:
+In the final config the chip runs at about **22% of its BF16 peak**: 1.0 GFLOP per token (from the training log) × 148K tokens/s ≈ 149 TFLOP/s, against about 667 TFLOP/s. This counts attention FLOPs without discounting the causal mask (the PaLM convention); counting only the causal half gives 0.93 GFLOP per token, ≈ 138 TFLOP/s or about 21%. The remaining bottleneck is **forward and backward compute made of many mid-sized ops, with device memory capping the per-core batch**. Evidence:
 
 - Memory is the cap: device batch 16, depth 16 and U-net skips fail to allocate at 12 GiB per NeuronCore, and the device-batch-4 workarounds are slower per token.
 - Not communication or host: all-reduce was 7% of the step, and lnc=2 (half the host processes) was slower.

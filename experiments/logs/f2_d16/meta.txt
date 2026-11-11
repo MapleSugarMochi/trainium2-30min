@@ -1,0 +1,12 @@
+id: f2_d16
+ref: exp/final2
+commit: bd73202
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_DEPTH=16
+max_train_seconds: 1800
+desc: final2 + depth 16 (1024 wide): trend d12 1.0872, d14 1.0805
+start_utc: 2026-11-10T15:54:07Z
+end_utc: 2026-11-10T15:57:03Z
+wall_seconds: 172
+exit_code: 1

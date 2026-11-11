@@ -1,0 +1,12 @@
+id: ck_d12
+ref: exp/nki-qknorm
+commit: deae23f
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1
+max_train_seconds: 1800
+desc: mainline + NKI RoPE/QK-norm kernel: depth 12, 128K batch, warmdown 60%
+start_utc: 2026-11-09T11:22:12Z
+end_utc: 2026-11-09T11:55:27Z
+wall_seconds: 1881
+exit_code: 0

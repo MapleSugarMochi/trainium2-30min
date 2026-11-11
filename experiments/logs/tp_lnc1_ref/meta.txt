@@ -1,0 +1,12 @@
+id: tp_lnc1_ref
+ref: exp/final2
+commit: 3b8e624
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_PROFILE=1
+max_train_seconds: 900
+desc: reference for lnc=2 checks: lnc=1 x 8 procs, same config and budget
+start_utc: 2026-11-10T19:14:13Z
+end_utc: 2026-11-10T19:32:42Z
+wall_seconds: 986
+exit_code: 0

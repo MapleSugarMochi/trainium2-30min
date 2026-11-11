@@ -1,0 +1,12 @@
+id: final_s1
+ref: exp/final
+commit: 97ed593
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_SEED=1
+max_train_seconds: 1800
+desc: final config (LR 0.025), seed 1 - paired reference for final_mlr03_s1
+start_utc: 2026-11-09T15:27:05Z
+end_utc: 2026-11-09T16:00:02Z
+wall_seconds: 1878
+exit_code: 0

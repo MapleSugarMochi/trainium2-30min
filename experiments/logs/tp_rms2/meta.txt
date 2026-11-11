@@ -1,0 +1,12 @@
+id: tp_rms2
+ref: exp/nki-rmsnorm
+commit: 2449244
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_PROFILE=1 NEURON_HP_BF16_MATMUL=1 NEURON_HP_NKI_RMSNORM=1 NEURON_HP_KERNEL_SELFTEST=1
+max_train_seconds: 900
+desc: kernel: fused RMSNorm NKI retry (per-dtype kernels), selftest + throughput vs tp_bf16 0.788 s/step
+start_utc: 2026-11-10T14:53:21Z
+end_utc: 2026-11-10T15:15:59Z
+wall_seconds: 1260
+exit_code: 0

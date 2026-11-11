@@ -1,0 +1,250 @@
+[W1110 21:56:47.219993772 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+W1110 21:56:47.031000 1035030 torch/distributed/run.py:851] 
+W1110 21:56:47.031000 1035030 torch/distributed/run.py:851] *****************************************
+W1110 21:56:47.031000 1035030 torch/distributed/run.py:851] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1110 21:56:47.031000 1035030 torch/distributed/run.py:851] *****************************************
+[W1110 21:56:49.287604344 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.288176984 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.291801172 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.374636488 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.966156198 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.966759603 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.968224130 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 21:56:49.018461870 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+2026-Nov-10 21:56:55.0438 1035045:1035045 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:56:55.0441 1035045:1035045 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:56:55.0444 1035045:1035045 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:56:55.0446 1035045:1035045 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0820 1035047:1035047 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0823 1035047:1035047 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0826 1035047:1035047 [2] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0828 1035047:1035047 [2] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0855 1035051:1035051 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0858 1035051:1035051 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0859 1035049:1035049 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0860 1035051:1035051 [6] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0862 1035049:1035049 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0865 1035046:1035046 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0866 1035049:1035049 [4] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0866 1035051:1035051 [6] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0868 1035046:1035046 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0870 1035049:1035049 [4] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0872 1035046:1035046 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0878 1035048:1035048 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0878 1035048:1035048 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0878 1035048:1035048 [3] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0878 1035048:1035048 [3] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0880 1035046:1035046 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0894 1035052:1035052 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0894 1035050:1035050 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 21:57:08.0896 1035052:1035052 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0898 1035050:1035050 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 21:57:08.0900 1035052:1035052 [7] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0902 1035050:1035050 [5] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 21:57:08.0904 1035052:1035052 [7] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 21:57:08.0906 1035050:1035050 [5] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+device=neuron dtype=torch.bfloat16 world_size=8
+training target=1000000 steps max_seconds=1800 official_budget=1800s
+model_config={
+  "sequence_len": 1024,
+  "vocab_size": 8192,
+  "n_layer": 14,
+  "n_head": 7,
+  "n_embd": 896,
+  "value_resid": false,
+  "unet": false
+}
+num_params=149,553,180 flops_per_token=1.007419e+09
+adamw_core compiled
+muon_core compiled
+bucket_allreduce=False compile_opt=True
+torch.compile enabled (backend=neuron)
+micro_tokens=65,536 grad_accum_steps=6
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+step 00000 | loss 9.0110 | lrm 0.050 | dt 53.46s | tok/s 7,355 | remaining_steps 999999 | remaining_time 1745s | epoch 1
+step 00001 | loss 8.9919 | lrm 0.100 | dt 2.68s | tok/s 146,581 | remaining_steps 999998 | remaining_time 1742s | epoch 1
+step 00002 | loss 8.9538 | lrm 0.150 | dt 2.62s | tok/s 150,156 | remaining_steps 999997 | remaining_time 1740s | epoch 1
+step 00003 | loss 8.8936 | lrm 0.200 | dt 2.64s | tok/s 148,712 | remaining_steps 999996 | remaining_time 1737s | epoch 1
+step 00004 | loss 8.7877 | lrm 0.250 | dt 2.70s | tok/s 145,738 | remaining_steps 999995 | remaining_time 1800s | epoch 1
+step 00010 | loss 7.3438 | lrm 0.550 | dt 2.61s | tok/s 150,918 | remaining_steps 999989 | remaining_time 1784s | epoch 1
+step 00020 | loss 6.0498 | lrm 1.000 | dt 2.62s | tok/s 149,814 | remaining_steps 999979 | remaining_time 1757s | epoch 1
+step 00030 | loss 5.5406 | lrm 1.000 | dt 2.67s | tok/s 147,231 | remaining_steps 999969 | remaining_time 1731s | epoch 1
+step 00040 | loss 5.2747 | lrm 1.000 | dt 2.61s | tok/s 150,776 | remaining_steps 999959 | remaining_time 1704s | epoch 1
+step 00050 | loss 5.0531 | lrm 1.000 | dt 2.64s | tok/s 149,178 | remaining_steps 999949 | remaining_time 1677s | epoch 1
+step 00060 | loss 4.8693 | lrm 1.000 | dt 2.66s | tok/s 147,942 | remaining_steps 999939 | remaining_time 1651s | epoch 1
+step 00070 | loss 4.6306 | lrm 1.000 | dt 2.65s | tok/s 148,184 | remaining_steps 999929 | remaining_time 1624s | epoch 1
+step 00080 | loss 4.3856 | lrm 1.000 | dt 2.65s | tok/s 148,638 | remaining_steps 999919 | remaining_time 1597s | epoch 1
+step 00090 | loss 4.1716 | lrm 1.000 | dt 2.65s | tok/s 148,501 | remaining_steps 999909 | remaining_time 1571s | epoch 1
+step 00100 | loss 4.0634 | lrm 1.000 | dt 2.65s | tok/s 148,216 | remaining_steps 999899 | remaining_time 1544s | epoch 1
+step 00110 | loss 3.9018 | lrm 1.000 | dt 2.67s | tok/s 147,148 | remaining_steps 999889 | remaining_time 1517s | epoch 1
+step 00120 | loss 3.8222 | lrm 1.000 | dt 2.69s | tok/s 145,922 | remaining_steps 999879 | remaining_time 1491s | epoch 1
+step 00130 | loss 3.6825 | lrm 1.000 | dt 2.68s | tok/s 146,596 | remaining_steps 999869 | remaining_time 1464s | epoch 1
+step 00140 | loss 3.6177 | lrm 1.000 | dt 2.71s | tok/s 145,188 | remaining_steps 999859 | remaining_time 1437s | epoch 1
+step 00150 | loss 3.5386 | lrm 1.000 | dt 2.65s | tok/s 148,221 | remaining_steps 999849 | remaining_time 1411s | epoch 1
+step 00160 | loss 3.4623 | lrm 1.000 | dt 2.61s | tok/s 150,815 | remaining_steps 999839 | remaining_time 1384s | epoch 1
+step 00170 | loss 3.4247 | lrm 1.000 | dt 2.64s | tok/s 149,174 | remaining_steps 999829 | remaining_time 1358s | epoch 1
+step 00180 | loss 3.3707 | lrm 1.000 | dt 2.64s | tok/s 149,043 | remaining_steps 999819 | remaining_time 1331s | epoch 1
+step 00190 | loss 3.3837 | lrm 1.000 | dt 2.67s | tok/s 147,257 | remaining_steps 999809 | remaining_time 1304s | epoch 1
+step 00200 | loss 3.3578 | lrm 1.000 | dt 2.65s | tok/s 148,197 | remaining_steps 999799 | remaining_time 1278s | epoch 1
+step 00210 | loss 3.3151 | lrm 1.000 | dt 2.67s | tok/s 147,202 | remaining_steps 999789 | remaining_time 1251s | epoch 1
+step 00220 | loss 3.2797 | lrm 1.000 | dt 2.66s | tok/s 147,708 | remaining_steps 999779 | remaining_time 1224s | epoch 1
+step 00230 | loss 3.2582 | lrm 1.000 | dt 2.65s | tok/s 148,661 | remaining_steps 999769 | remaining_time 1198s | epoch 1
+step 00240 | loss 3.2175 | lrm 1.000 | dt 2.67s | tok/s 147,206 | remaining_steps 999759 | remaining_time 1171s | epoch 1
+step 00250 | loss 3.2157 | lrm 1.000 | dt 2.71s | tok/s 145,172 | remaining_steps 999749 | remaining_time 1144s | epoch 1
+step 00260 | loss 3.1696 | lrm 1.000 | dt 2.70s | tok/s 145,875 | remaining_steps 999739 | remaining_time 1118s | epoch 1
+step 00270 | loss 3.1728 | lrm 1.000 | dt 2.63s | tok/s 149,592 | remaining_steps 999729 | remaining_time 1091s | epoch 1
+step 00280 | loss 3.1703 | lrm 0.986 | dt 2.65s | tok/s 148,260 | remaining_steps 999719 | remaining_time 1064s | epoch 1
+step 00290 | loss 3.1470 | lrm 0.961 | dt 2.65s | tok/s 148,597 | remaining_steps 999709 | remaining_time 1038s | epoch 1
+step 00300 | loss 3.1642 | lrm 0.936 | dt 2.65s | tok/s 148,553 | remaining_steps 999699 | remaining_time 1011s | epoch 1
+step 00310 | loss 3.1205 | lrm 0.912 | dt 2.61s | tok/s 150,871 | remaining_steps 999689 | remaining_time 984s | epoch 1
+step 00320 | loss 3.0711 | lrm 0.887 | dt 2.67s | tok/s 147,535 | remaining_steps 999679 | remaining_time 958s | epoch 1
+step 00330 | loss 3.1061 | lrm 0.862 | dt 2.62s | tok/s 150,175 | remaining_steps 999669 | remaining_time 931s | epoch 1
+step 00340 | loss 3.0112 | lrm 0.838 | dt 2.65s | tok/s 148,533 | remaining_steps 999659 | remaining_time 905s | epoch 1
+step 00350 | loss 3.0207 | lrm 0.814 | dt 2.64s | tok/s 148,683 | remaining_steps 999649 | remaining_time 878s | epoch 1
+step 00360 | loss 3.0042 | lrm 0.789 | dt 2.62s | tok/s 150,364 | remaining_steps 999639 | remaining_time 852s | epoch 1
+step 00370 | loss 2.9283 | lrm 0.765 | dt 2.61s | tok/s 150,812 | remaining_steps 999629 | remaining_time 825s | epoch 1
+step 00380 | loss 2.9653 | lrm 0.740 | dt 2.65s | tok/s 148,118 | remaining_steps 999619 | remaining_time 799s | epoch 1
+step 00390 | loss 2.9896 | lrm 0.715 | dt 2.65s | tok/s 148,525 | remaining_steps 999609 | remaining_time 772s | epoch 1
+step 00400 | loss 2.9646 | lrm 0.691 | dt 2.61s | tok/s 150,827 | remaining_steps 999599 | remaining_time 746s | epoch 1
+step 00410 | loss 2.9971 | lrm 0.666 | dt 2.64s | tok/s 149,153 | remaining_steps 999589 | remaining_time 719s | epoch 1
+step 00420 | loss 2.8789 | lrm 0.642 | dt 2.59s | tok/s 151,625 | remaining_steps 999579 | remaining_time 693s | epoch 1
+step 00430 | loss 2.9253 | lrm 0.617 | dt 2.67s | tok/s 147,489 | remaining_steps 999569 | remaining_time 666s | epoch 1
+step 00440 | loss 2.8841 | lrm 0.592 | dt 2.64s | tok/s 149,204 | remaining_steps 999559 | remaining_time 640s | epoch 1
+step 00450 | loss 2.8977 | lrm 0.568 | dt 2.64s | tok/s 149,009 | remaining_steps 999549 | remaining_time 613s | epoch 1
+step 00460 | loss 2.9133 | lrm 0.543 | dt 2.64s | tok/s 149,190 | remaining_steps 999539 | remaining_time 586s | epoch 1
+step 00470 | loss 2.9042 | lrm 0.518 | dt 2.68s | tok/s 146,646 | remaining_steps 999529 | remaining_time 560s | epoch 1
+step 00480 | loss 2.9196 | lrm 0.494 | dt 2.63s | tok/s 149,546 | remaining_steps 999519 | remaining_time 533s | epoch 1
+step 00490 | loss 2.9271 | lrm 0.469 | dt 2.71s | tok/s 145,185 | remaining_steps 999509 | remaining_time 506s | epoch 1
+step 00500 | loss 2.9560 | lrm 0.444 | dt 2.62s | tok/s 150,345 | remaining_steps 999499 | remaining_time 480s | epoch 1
+step 00510 | loss 2.8502 | lrm 0.420 | dt 2.68s | tok/s 146,704 | remaining_steps 999489 | remaining_time 453s | epoch 1
+step 00520 | loss 2.8713 | lrm 0.395 | dt 2.62s | tok/s 149,888 | remaining_steps 999479 | remaining_time 426s | epoch 1
+step 00530 | loss 2.7847 | lrm 0.370 | dt 2.63s | tok/s 149,486 | remaining_steps 999469 | remaining_time 400s | epoch 1
+step 00540 | loss 2.8395 | lrm 0.346 | dt 2.66s | tok/s 147,880 | remaining_steps 999459 | remaining_time 373s | epoch 1
+step 00550 | loss 2.7772 | lrm 0.321 | dt 2.65s | tok/s 148,363 | remaining_steps 999449 | remaining_time 347s | epoch 1
+step 00560 | loss 2.8338 | lrm 0.296 | dt 2.65s | tok/s 148,554 | remaining_steps 999439 | remaining_time 320s | epoch 1
+step 00570 | loss 2.8260 | lrm 0.272 | dt 2.66s | tok/s 147,858 | remaining_steps 999429 | remaining_time 293s | epoch 2
+step 00580 | loss 2.7854 | lrm 0.247 | dt 2.63s | tok/s 149,301 | remaining_steps 999419 | remaining_time 267s | epoch 2
+step 00590 | loss 2.7407 | lrm 0.223 | dt 2.66s | tok/s 148,034 | remaining_steps 999409 | remaining_time 240s | epoch 2
+step 00600 | loss 2.7337 | lrm 0.198 | dt 2.65s | tok/s 148,648 | remaining_steps 999399 | remaining_time 213s | epoch 2
+step 00610 | loss 2.7698 | lrm 0.173 | dt 2.64s | tok/s 148,951 | remaining_steps 999389 | remaining_time 187s | epoch 2
+step 00620 | loss 2.7390 | lrm 0.149 | dt 2.68s | tok/s 146,671 | remaining_steps 999379 | remaining_time 160s | epoch 2
+step 00630 | loss 2.7464 | lrm 0.124 | dt 2.68s | tok/s 146,751 | remaining_steps 999369 | remaining_time 133s | epoch 2
+step 00640 | loss 2.7363 | lrm 0.099 | dt 2.63s | tok/s 149,289 | remaining_steps 999359 | remaining_time 107s | epoch 2
+step 00650 | loss 2.7750 | lrm 0.074 | dt 2.60s | tok/s 150,976 | remaining_steps 999349 | remaining_time 80s | epoch 2
+step 00660 | loss 2.7742 | lrm 0.050 | dt 2.67s | tok/s 147,390 | remaining_steps 999339 | remaining_time 54s | epoch 2
+step 00670 | loss 2.7064 | lrm 0.025 | dt 2.66s | tok/s 148,055 | remaining_steps 999329 | remaining_time 27s | epoch 2
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+---
+checkpoint_path:    /home/ubuntu/workspace/ckpt/f3_tb384k/final.pt
+training_seconds:  1794.2
+budget_seconds:    1800
+target_steps:      1000000
+max_train_seconds: 1800
+startup_allowance_est: 88.9
+charged_seconds_est:   1794.7
+over_budget:       False
+total_seconds:     1860.5
+compiled:          True
+nki_relu2:         False
+num_steps:         679
+total_tokens_M:    267.0
+world_size:        8
+lnc:               1
+seq_len:           1024
+num_params_M:      149.6

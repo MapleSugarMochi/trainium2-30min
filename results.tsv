@@ -1,0 +1,131 @@
+commit	val_bpb	steps	s_per_step	status	description
+92240eb	1.259076	1000	1.598	keep	baseline, lnc=1 x 8 procs, 1000-step cap hit at 1590 s (manual run)
+92240eb	1.263994	1000	1.563	discard	base_nc2: baseline, lnc=2 x 4 procs
+92240eb	1.259076	1000	1.530	discard	base_nc1_r2: baseline repeat (noise), lnc=1 x 8 procs
+f3529a2	1.240288	788	2.281	discard	sched_wd40: time-based linear warmdown over last 40%, no 1000-step cap
+69d6619	1.696981	133	2.255	discard	prof_nc1: profile: per-phase step time, lnc=1 x 8 [300 s run]
+69d6619	1.670534	142	2.118	discard	prof_nc2: profile: per-phase step time, lnc=2 x 4 [300 s run]
+f2a251a	1.193003	1141	1.579	keep	sched_wd40_fix: warmdown 40% with LR as device tensor (no per-step recompiles)
+2355ee5	1.648980	154	1.574	discard	tp_b1: throughput: device batch 1 (accum 8), LR-tensor fix [240 s run]
+2355ee5	1.514867	209	1.147	discard	tp_b2: throughput: device batch 2 (accum 4) [240 s run]
+2355ee5	1.412195	262	0.912	discard	tp_b4: throughput: device batch 4 (accum 2) [240 s run]
+2355ee5	1.366335	299	0.797	discard	tp_b8: throughput: device batch 8 (accum 1) [240 s run]
+2355ee5	1.413945	258	0.927	discard	tp_compile: throughput: torch.compile(backend=neuron), device batch 1 [240 s run]
+f2a251a	1.183751	1144	1.576	discard	sched_wd40_seed1: noise: sched_wd40_fix with init seed 1 (same data order)
+2355ee5	2.879462	5	-	discard	tp_b8c: throughput: device batch 8 + torch.compile [240 s run]
+2355ee5	1.352230	309	0.771	discard	tp_b4c: throughput: device batch 4 + torch.compile [240 s run]
+f2a251a	1.147440	2415	0.745	keep	sched_b8c: full: warmdown 40% + device batch 8 + torch.compile
+2355ee5	1.251363	561	0.746	discard	tp_b8c_r: throughput rerun: b8+compile (240 s was shorter than the compile step, stopped at step 5) [420 s run]
+12801fa	1.260630	520	0.806	discard	tp_b8c_ar: throughput: b8+compile + bucketed all-reduce [420 s run]
+12801fa	1.249965	560	0.748	discard	tp_b8c_ar_opt: throughput: b8+compile + bucketed all-reduce + compiled Muon [420 s run]
+f2a251a	1.216255	802	0.746	discard	s_ref_d10: screen 10min reference (b8+compile, depth 10, wd 0.4) [600 s run]
+9796703	1.142754	2635	0.682	keep	sched_fast: full: b8 + compile + compiled Muon (no bucketed all-reduce)
+9796703	1.238678	615	0.679	discard	tp_fast: throughput: b8+compile+compiled Muon (reference) [420 s run]
+9796703	1.225709	715	0.584	discard	tp_fast_adamw: throughput: + compiled AdamW [420 s run]
+9796703	1.206356	876	0.682	discard	s_ref_d10b: screen 10min reference on exp/fastopt (b8+compile+compiled Muon, depth 10, wd 0.4) [600 s run]
+9796703	1.134866	3039	0.592	keep	sched_fa: full: b8 + compile + compiled Muon + compiled AdamW
+9796703	1.193115	1007	0.594	discard	s_ref_d10c: screen 10min reference: all compiled (b8, depth 10, wd 0.4) [600 s run]
+9796703	1.197576	1632	0.365	discard	s_d8: screen: depth 8 [600 s run]
+9796703	1.221520	2581	0.231	discard	s_d6: screen: depth 6 [600 s run]
+9796703	1.215238	695	0.862	discard	s_d12: screen: depth 12 (more steps may afford a bigger model) [600 s run]
+9796703	1.202753	1006	0.594	discard	s_wdf02: screen: warmdown 20% [600 s run]
+9796703	1.191141	1009	0.592	discard	s_wdf06: screen: warmdown 60% [600 s run]
+9796703	1.218217	1667	0.358	discard	s_tb32k: screen: total batch 32K tokens (device batch 4, accum 1) [600 s run]
+9796703	1.194849	553	1.084	discard	s_tb128k: screen: total batch 128K tokens (accum 2) [600 s run]
+9796703	1.196176	1009	0.593	discard	s_mlr015: screen: Muon LR 0.015 [600 s run]
+9796703	1.197221	1009	0.592	discard	s_mlr04: screen: Muon LR 0.04 [600 s run]
+9796703	1.200525	1008	0.593	discard	s_elr05: screen: embedding LR x0.5 [600 s run]
+9796703	1.199210	1009	0.592	discard	s_elr2: screen: embedding LR x2 [600 s run]
+9796703	1.194914	1006	0.594	discard	s_ulr05: screen: lm_head LR x0.5 [600 s run]
+9796703	1.190306	1006	0.594	discard	s_ulr2: screen: lm_head LR x2 [600 s run]
+9796703	1.140538	3034	0.593	discard	sched_fa_seed1: noise: sched_fa with init seed 1
+9796703	1.166966	4910	0.366	discard	sched_fa_d8: full: depth 8 (tied with depth 10 at 10 min; does it hold at 30?)
+9796703	1.130693	2092	0.860	keep	sched_fa_d12: full: depth 12 (lost at 10 min; bigger models gain more from longer runs)
+2355ee5	-	-	-	crash	tp_b16: throughput: device batch 16, total 128K (accum 1) [420 s run]
+9796703	1.132455	3034	0.592	discard	sched_fa_wdf06: full: warmdown 60% (best single screen, within noise)
+9796703	1.128970	1660	1.084	keep	sched_fa_tb128k: full: total batch 128K (more tokens/s at 10 min)
+9796703	1.135284	2089	0.861	discard	sched_fa_d12_seed1: full: depth 12, seed 1 (confirm depth 12 > depth 10)
+9796703	-	-	-	crash	sched_fa_d14: full: depth 14 (trend d8 1.167, d10 1.138, d12 1.131)
+9796703	1.129912	1660	1.084	discard	c_d10: combo: depth 10 + 128K batch + warmdown 60%
+9796703	1.124078	1093	1.649	keep	c_d12: combo: depth 12 + 128K batch + warmdown 60%
+9796703	1.123701	1662	1.083	discard	c_d10_s1: combo: depth 10 + 128K + wd60, seed 1
+7e2d0a5	1.310264	350	0.853	discard	opbench_d12: analysis: per-component fwd+bwd time at depth 12, compiled [300 s run]
+7e2d0a5	1.334203	277	1.082	discard	opbench_d12_eager: analysis: per-component fwd+bwd time at depth 12, eager [300 s run]
+9796703	1.221866	711	0.587	discard	tp_relu2_c: kernel 3.1: example NKI relu^2 kernel with compile (vs tp_fast_adamw 0.584 s/step) [420 s run]
+2355ee5	1.257751	545	0.768	discard	tp_relu2_e: kernel 3.1: example NKI relu^2 kernel, eager (vs eager b8) [420 s run]
+2355ee5	1.263046	524	0.798	discard	tp_b8_e: kernel 3.1 reference: eager b8 at 420 s [420 s run]
+9796703	1.120309	1092	1.651	keep	c_d12_s1: combo: depth 12 + 128K + wd60, seed 1
+deae23f	1.246503	536	0.780	keep	k_qknorm_d12: kernel: fused RoPE+QK-RMSNorm NKI, selftest + throughput, depth 12 [420 s run]
+9796703	1.258011	488	0.858	discard	tp_d12: kernel reference: depth 12 all-compiled throughput, no kernel [420 s run]
+deae23f	1.120673	1174	1.535	keep	ck_d12: mainline + NKI RoPE/QK-norm kernel: depth 12, 128K batch, warmdown 60%
+deae23f	1.116142	1176	1.532	keep	ck_d12_s1: mainline + NKI kernel, seed 1
+deae23f	1.116944	1177	1.530	discard	ck_d12_mlr03: mainline+kernel, Muon LR 0.03 (batch doubled to 128K)
+deae23f	1.122399	1166	1.545	discard	ck_d12_mlr02: mainline+kernel, Muon LR 0.02
+97ed593	1.121205	1171	1.539	keep	final_v1: final candidate: exp/final with plain launch command (defaults only)
+97ed593	1.115885	1181	1.525	discard	final_mlr03_s1: final config, Muon LR 0.03, seed 1 (confirm 0.03 > 0.025)
+97ed593	1.111068	1178	1.529	keep	final_mlr035: final config, Muon LR 0.035
+97ed593	1.115974	1176	1.532	keep	final_s1: final config (LR 0.025), seed 1 - paired reference for final_mlr03_s1
+94ee892	1.245920	537	0.779	discard	k2_bhtd_d12: kernel v2: write [B,H,T,D] directly (no q/k transpose), selftest + throughput vs k_qknorm_d12 0.780 s/step [420 s run]
+97ed593	1.112419	1184	1.522	keep	final_mlr035_s1: final config, Muon LR 0.035, seed 1
+97ed593	1.112301	1181	1.526	discard	final_mlr045: final config, Muon LR 0.045 (trend still improving at 0.035)
+97ed593	1.116261	1193	1.510	discard	final_mlr06: final config, Muon LR 0.06 (find the turning point)
+94696e7	1.111996	1208	1.492	discard	final_mlr045_s1: final config, Muon LR 0.045, seed 1 (plateau check)
+94696e7	1.110568	1190	1.515	discard	final_wd0: final config (LR 0.035), weight decay 0
+94696e7	1.121519	1178	1.529	discard	final_wd02: final config (LR 0.035), weight decay 0.2
+94696e7	1.110235	1183	1.523	keep	final_v2: final candidate v2: defaults only (Muon LR 0.035)
+94696e7	1.116559	1188	1.516	keep	final_s2: final config seed 2 (error bar for final result)
+94696e7	1.113600	1182	1.524	keep	final_s3: final config seed 3 (error bar for final result)
+94696e7	1.117708	1186	1.520	discard	final_elr2: final config, embedding LR x2
+94696e7	1.111748	1192	1.512	discard	final_ulr2: final config, lm_head LR x2
+94696e7	1.115046	1194	1.508	discard	final_slr05: final config, scalar LR x0.5
+94696e7	1.107526	1194	1.509	keep	final_s4: final config seed 4 (error bar)
+94696e7	1.117746	1197	1.505	keep	final_s5: final config seed 5 (error bar)
+94696e7	1.113431	801	2.253	discard	final_tb192k: final config, total batch 192K (accum 3; 128K beat 64K at 30 min)
+203b1af	1.110385	1191	1.513	discard	final_wdf05: final config, warmdown 50%
+203b1af	1.109717	1189	1.516	discard	final_wdf07: final config, warmdown 70%
+baa35fd	1.125631	1172	1.538	discard	arch_vr: arch: value residual (v mixes layer-0 v)
+baa35fd	1.167814	591	1.526	discard	tp_fin_ref: throughput reference: final config [900 s run]
+1dd580d	1.115113	1140	0.788	keep	tp_bf16: throughput: bf16 matmul inputs (baseline matmuls were fp32) [900 s run]
+1dd580d	1.087156	2302	0.781	keep	bf16_full: full: final config + bf16 matmul inputs
+1dd580d	-	-	-	crash	tp_rms: kernel: fused RMSNorm NKI (selftest + throughput, on bf16 matmul) [900 s run]
+1dd580d	1.080528	1819	0.989	keep	bf16_d14: bf16 + depth 14 (896 wide): 2x faster steps may now afford a bigger model
+2449244	1.115239	1135	0.792	discard	tp_rms2: kernel: fused RMSNorm NKI retry (per-dtype kernels), selftest + throughput vs tp_bf16 0.788 s/step [900 s run]
+2449244	1.077608	1626	1.107	keep	bf16_tb192k: bf16 + total batch 192K (more steps now available)
+bd73202	-	-	-	crash	f2_d16: final2 + depth 16 (1024 wide): trend d12 1.0872, d14 1.0805
+2449244	1.129824	902	0.997	discard	tp_qkvcat: throughput: fused QKV matmul (on bf16 matmul) [900 s run]
+2449244	1.115294	1141	0.787	discard	tp_cc_tr: throughput: neuronx-cc --model-type=transformer (on bf16 matmul) [900 s run]
+2449244	1.115177	1161	0.774	discard	tp_cc_O3: throughput: neuronx-cc -O3 (on bf16 matmul) [900 s run]
+bd73202	1.075699	1278	1.410	keep	f2_tb192k: final2 (depth 14) + total batch 192K (192K at depth 12 gave 1.0776)
+bd73202	1.074477	1254	1.437	discard	bf16_tb256k: bf16 depth 12 + total batch 256K (batch trend 128K 1.0872, 192K 1.0776)
+3b8e624	1.123764	537	1.681	discard	tp_lnc2_b8: host-bound check: lnc=2 x 4 procs, device batch 8 (telemetry: host CPU 94% busy, cores 43% busy) [900 s run]
+3b8e624	1.126249	533	1.694	discard	tp_lnc2_b16: host-bound check: lnc=2 x 4 procs, device batch 16 (2x memory per logical core) [900 s run]
+3b8e624	1.115716	634	1.423	discard	tp_lnc1_ref: reference for lnc=2 checks: lnc=1 x 8 procs, same config and budget [900 s run]
+3b8e624	1.078425	904	1.996	discard	f2_d16_b4: depth 16 with device batch 4 (halves activation memory; batch 8 OOMed) + 192K
+3b8e624	1.066676	990	1.822	keep	f2_tb256k: P1 scale: depth 14 + total batch 256K
+3b8e624	1.076081	1283	1.404	discard	f2_192_mlr045: P3 LR at new scale: depth 14 + 192K, Muon LR 0.045 (x1.3)
+3b8e624	1.079991	1280	1.407	discard	f2_192_mlr06: P3 LR at new scale: depth 14 + 192K, Muon LR 0.06 (x1.7)
+0a20a39	1.060530	679	2.662	keep	f3_tb384k: P1 scale: depth 14 + total batch 384K (trend 128K 1.0805?, 192K 1.0757, 256K 1.0667)
+0a20a39	1.065370	989	1.822	discard	f3_256_mlr045: P3 LR at best scale: depth 14 + 256K, Muon LR 0.045 (bigger batch may want higher LR)
+637670a	1.068699	518	3.498	discard	f4_tb512k: P1 scale: depth 14 + total batch 512K (trend 192K 1.0757, 256K 1.0667, 384K 1.0605)
+637670a	1.060827	679	2.661	discard	f4_384_wdf07: P4 recipe: depth 14 + 384K, warmdown 70%
+637670a	1.064908	680	2.656	discard	f4_384_mlr045: P3 LR at best scale: depth 14 + 384K, Muon LR 0.045 (256K: 0.045 1.0654 vs 0.035 1.0667; bigger batch may want higher LR)
+637670a	-	-	-	crash	f4_384_unet: P4 arch: depth 14 + 384K, U-net skips [OOM at device batch 8]
+637670a	1.074817	678	2.667	discard	f4_384_alr15: P3 Adam LRs x1.5 at 384K (tuned at 128K; sqrt batch scaling suggests ~x1.7)
+637670a	1.063832	677	2.669	discard	f4_384_sqrt: P4 recipe: depth 14 + 384K, 1-sqrt warmdown
+637670a	1.060902	681	2.655	discard	f4_384_elr02: P3 embedding LR x0.67 at 384K (Adam LRs x1.5 cost +0.014; elr x2 also hurt at 128K)
+637670a	1.112325	678	2.664	discard	f4_384_sc30: P4 recipe: depth 14 + 384K, logit softcap 30 [eval INVALID: softcap not stored in checkpoint, eval used 15; fixed on exp/softcap]
+637670a	1.071036	679	2.660	discard	f4_384_mlr028: P3 Muon LR 0.028 at 384K (0.045 lost: 1.0649 vs 1.0605)
+87d896f	1.061428	679	2.660	discard	f5_sc12: P4 logit softcap 12 (softcap now stored in checkpoint; softcap 30 had higher train loss than 15)
+637670a	1.063466	680	2.656	discard	f4_384_ulr004: P3 lm_head LR x0.67 at 384K
+637670a	1.084652	602	3.005	discard	f5_unet_b4: P4 arch: U-net skips with device batch 4 (U-net OOMed at batch 8)
+637670a	1.060184	681	2.654	discard	f4_384_wd005: P4 weight decay 0.05 at 384K (wd 0 tied wd 0.1 at 128K)
+64dbaa3	-	-	-	crash	tp_b16_384: P6 throughput: depth 14 + 384K, device batch 16 (accum 3; bf16 may fit) [900 s run]
+64dbaa3	1.062488	806	2.239	discard	f4_tb320k: P1 scale: total batch 320K (256K 1.0667, 384K 1.0605, 512K 1.0687)
+64dbaa3	1.073706	642	2.815	discard	f6_d15: P2 model size: depth 15 at width 896 (depth 14 beat 12 by 0.008 at 256K; width 1024 OOMs)
+64dbaa3	1.062866	680	2.659	discard	f6_mlr040: P3 Muon LR 0.04 at 384K (0.028 1.0710, 0.035 1.0605, 0.045 1.0649)
+64dbaa3	1.060601	680	2.658	discard	f6_wd0: P4 weight decay 0 at 384K (wd 0.05 1.0602 vs 0.1 1.0605: follow the direction)
+5c11635	1.061476	679	2.661	discard	f6_wdf05: P4 warmdown 50% at 384K (70% tied)
+5c11635	-	-	-	crash	f6_gc1: P4 gradient clipping at norm 1.0 (last slot; must start by 10:17) [crash: Neuron cannot compile aten::_foreach_norm used by clip_grad_norm_]
+5c11635	1.070849	714	2.529	discard	f6_d13: P2 model size: depth 13 at width 896 (832 rounds up to 896); depth 15 at 896 lost (1.0737), so try fewer layers, ~7% more steps
+a0858e9	-	-	-	crash	tp_b12_384: P6 throughput: device batch 12 at 384K (accum 4; batch 16 OOMs). Reference: tp_final384 (batch 8) right after [600 s run]
+a0858e9	1.267619	158	2.696	discard	tp_final384: P6 profile of the final config (depth 14 + 384K): per-phase step time for the next bottleneck; last slot before 11:00 [420 s run]

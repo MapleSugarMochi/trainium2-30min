@@ -1,0 +1,12 @@
+id: sched_wd40_fix
+ref: exp/sched
+commit: f2a251a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: 
+max_train_seconds: 1800
+desc: warmdown 40% with LR as device tensor (no per-step recompiles)
+start_utc: 2026-11-08T17:27:30Z
+end_utc: 2026-11-08T17:59:49Z
+wall_seconds: 1844
+exit_code: 0

@@ -1,0 +1,12 @@
+id: k_qknorm_d12
+ref: exp/nki-qknorm
+commit: deae23f
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_KERNEL_SELFTEST=1
+max_train_seconds: 420
+desc: kernel: fused RoPE+QK-RMSNorm NKI, selftest + throughput, depth 12
+start_utc: 2026-11-09T10:45:16Z
+end_utc: 2026-11-09T11:00:24Z
+wall_seconds: 794
+exit_code: 0

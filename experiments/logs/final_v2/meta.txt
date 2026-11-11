@@ -1,0 +1,12 @@
+id: final_v2
+ref: exp/final
+commit: 94696e7
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: 
+max_train_seconds: 1800
+desc: final candidate v2: defaults only (Muon LR 0.035)
+start_utc: 2026-11-09T19:45:10Z
+end_utc: 2026-11-09T20:18:14Z
+wall_seconds: 1883
+exit_code: 0

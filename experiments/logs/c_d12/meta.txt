@@ -1,0 +1,12 @@
+id: c_d12
+ref: exp/fastopt
+commit: 9796703
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12
+max_train_seconds: 1800
+desc: combo: depth 12 + 128K batch + warmdown 60%
+start_utc: 2026-11-09T08:05:34Z
+end_utc: 2026-11-09T08:38:41Z
+wall_seconds: 1873
+exit_code: 0

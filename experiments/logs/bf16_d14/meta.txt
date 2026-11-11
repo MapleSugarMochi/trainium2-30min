@@ -1,0 +1,12 @@
+id: bf16_d14
+ref: exp/nki-rmsnorm
+commit: 1dd580d
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_BF16_MATMUL=1 NEURON_HP_DEPTH=14
+max_train_seconds: 1800
+desc: bf16 + depth 14 (896 wide): 2x faster steps may now afford a bigger model
+start_utc: 2026-11-10T14:15:14Z
+end_utc: 2026-11-10T14:52:12Z
+wall_seconds: 2093
+exit_code: 0

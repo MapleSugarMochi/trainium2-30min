@@ -1,0 +1,12 @@
+id: sched_b8c
+ref: exp/sched
+commit: f2a251a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_DEVICE_BATCH_SIZE=8
+max_train_seconds: 1800
+desc: full: warmdown 40% + device batch 8 + torch.compile
+start_utc: 2026-11-08T19:31:03Z
+end_utc: 2026-11-08T20:03:40Z
+wall_seconds: 1859
+exit_code: 0

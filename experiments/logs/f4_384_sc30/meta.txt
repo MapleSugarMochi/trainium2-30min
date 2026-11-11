@@ -1,0 +1,12 @@
+id: f4_384_sc30
+ref: exp/final2
+commit: 637670a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_LOGIT_SOFTCAP=30.0
+max_train_seconds: 1800
+desc: P4 recipe: depth 14 + 384K, logit softcap 30
+start_utc: 2026-11-11T02:46:08Z
+end_utc: 2026-11-11T03:21:25Z
+wall_seconds: 1995
+exit_code: 0

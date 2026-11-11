@@ -1,0 +1,6 @@
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+This repository is based on the AWS Trainium Frontier Round 1 starter kit
+(Apache License 2.0). prepare.py, requirements.txt, artifacts/ and
+baseline/train.py are unmodified copies from that kit. train.py is a modified
+version of the kit's train.py (modifications by Xuzhou Dong, 2026).

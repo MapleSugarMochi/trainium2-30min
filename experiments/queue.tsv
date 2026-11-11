@@ -1,0 +1,130 @@
+id	ref	nc	max_train_seconds	args	env	desc
+base_nc2	main	2	1800	-	-	baseline, lnc=2 x 4 procs
+base_nc1_r2	main	1	1800	-	-	baseline repeat (noise), lnc=1 x 8 procs
+sched_wd40	exp/sched	1	1800	-	-	time-based linear warmdown over last 40%, no 1000-step cap
+prof_nc1	exp/profile	1	300	-	NEURON_HP_PROFILE=1	profile: per-phase step time, lnc=1 x 8
+prof_nc2	exp/profile	2	300	-	NEURON_HP_PROFILE=1	profile: per-phase step time, lnc=2 x 4
+sched_wd40_fix	exp/sched	1	1800	-	-	warmdown 40% with LR as device tensor (no per-step recompiles)
+tp_b1	exp/profile	1	240	-	NEURON_HP_PROFILE=1	throughput: device batch 1 (accum 8), LR-tensor fix
+tp_b2	exp/profile	1	240	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=2	throughput: device batch 2 (accum 4)
+tp_b4	exp/profile	1	240	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=4	throughput: device batch 4 (accum 2)
+tp_b8	exp/profile	1	240	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8	throughput: device batch 8 (accum 1)
+tp_compile	exp/profile	1	240	--compile	NEURON_HP_PROFILE=1	throughput: torch.compile(backend=neuron), device batch 1
+sched_wd40_seed1	exp/sched	1	1800	-	NEURON_HP_SEED=1	noise: sched_wd40_fix with init seed 1 (same data order)
+tp_b8c	exp/profile	1	240	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8	throughput: device batch 8 + torch.compile
+tp_b4c	exp/profile	1	240	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=4	throughput: device batch 4 + torch.compile
+sched_b8c	exp/sched	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8	full: warmdown 40% + device batch 8 + torch.compile
+tp_b8c_r	exp/profile	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8	throughput rerun: b8+compile (240 s was shorter than the compile step, stopped at step 5)
+tp_b8c_ar	exp/fastopt	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_BUCKET_AR=1	throughput: b8+compile + bucketed all-reduce
+tp_b8c_ar_opt	exp/fastopt	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_BUCKET_AR=1 NEURON_HP_COMPILE_OPT=1	throughput: b8+compile + bucketed all-reduce + compiled Muon
+sched_fast	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1	full: b8 + compile + compiled Muon (no bucketed all-reduce)
+tp_fast	exp/fastopt	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1	throughput: b8+compile+compiled Muon (reference)
+tp_fast_adamw	exp/fastopt	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	throughput: + compiled AdamW
+s_ref_d10	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1	screen 10min reference (b8+compile+compiled Muon, depth 10, wd 0.4)
+s_ref_d10b	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1	screen 10min reference on exp/fastopt (b8+compile+compiled Muon, depth 10, wd 0.4)
+sched_fa	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	full: b8 + compile + compiled Muon + compiled AdamW
+s_ref_d10c	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen 10min reference: all compiled (b8, depth 10, wd 0.4)
+s_d8	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_DEPTH=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen: depth 8
+s_d6	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_DEPTH=6 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen: depth 6
+s_d12	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_DEPTH=12 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen: depth 12 (more steps may afford a bigger model)
+s_wdf02	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_WARMDOWN_FRAC=0.2 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen: warmdown 20%
+s_wdf06	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	screen: warmdown 60%
+s_tb32k	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=4 NEURON_HP_COMPILE_OPT=1 NEURON_HP_TOTAL_BATCH_SIZE=32768 NEURON_HP_COMPILE_ADAMW=1	screen: total batch 32K tokens (device batch 4, accum 1)
+s_tb128k	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_COMPILE_ADAMW=1	screen: total batch 128K tokens (accum 2)
+s_mlr015	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_MATRIX_LR=0.015 NEURON_HP_COMPILE_ADAMW=1	screen: Muon LR 0.015
+s_mlr04	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_MATRIX_LR=0.04 NEURON_HP_COMPILE_ADAMW=1	screen: Muon LR 0.04
+s_elr05	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_EMBEDDING_LR=0.15 NEURON_HP_COMPILE_ADAMW=1	screen: embedding LR x0.5
+s_elr2	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_EMBEDDING_LR=0.6 NEURON_HP_COMPILE_ADAMW=1	screen: embedding LR x2
+s_ulr05	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_UNEMBEDDING_LR=0.003 NEURON_HP_COMPILE_ADAMW=1	screen: lm_head LR x0.5
+s_ulr2	exp/fastopt	1	600	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_UNEMBEDDING_LR=0.012 NEURON_HP_COMPILE_ADAMW=1	screen: lm_head LR x2
+sched_fa_seed1	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_SEED=1	noise: sched_fa with init seed 1
+sched_fa_d8	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=8	full: depth 8 (tied with depth 10 at 10 min; does it hold at 30?)
+sched_fa_d12	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12	full: depth 12 (lost at 10 min; bigger models gain more from longer runs)
+tp_b16	exp/profile	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=16 NEURON_HP_TOTAL_BATCH_SIZE=131072	throughput: device batch 16, total 128K (accum 1)
+sched_fa_wdf06	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_WARMDOWN_FRAC=0.6	full: warmdown 60% (best single screen, within noise)
+sched_fa_tb128k	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072	full: total batch 128K (more tokens/s at 10 min)
+sched_fa_d12_seed1	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_SEED=1	full: depth 12, seed 1 (confirm depth 12 > depth 10)
+sched_fa_d14	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=14	full: depth 14 (trend d8 1.167, d10 1.138, d12 1.131)
+c_d10	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6	combo: depth 10 + 128K batch + warmdown 60%
+c_d12	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12	combo: depth 12 + 128K batch + warmdown 60%
+c_d10_s1	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_SEED=1	combo: depth 10 + 128K + wd60, seed 1
+opbench_d12	exp/opbench	1	300	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_OPBENCH=1	analysis: per-component fwd+bwd time at depth 12, compiled
+opbench_d12_eager	exp/opbench	1	300	-	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_DEPTH=12 NEURON_HP_OPBENCH=1	analysis: per-component fwd+bwd time at depth 12, eager
+tp_relu2_c	exp/fastopt	1	420	--compile --nki-relu2	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1	kernel 3.1: example NKI relu^2 kernel with compile (vs tp_fast_adamw 0.584 s/step)
+tp_relu2_e	exp/profile	1	420	--nki-relu2	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8	kernel 3.1: example NKI relu^2 kernel, eager (vs eager b8)
+tp_b8_e	exp/profile	1	420	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8	kernel 3.1 reference: eager b8 at 420 s
+c_d12_s1	exp/fastopt	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_SEED=1	combo: depth 12 + 128K + wd60, seed 1
+k_qknorm_d12	exp/nki-qknorm	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_KERNEL_SELFTEST=1	kernel: fused RoPE+QK-RMSNorm NKI, selftest + throughput, depth 12
+tp_d12	exp/fastopt	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12	kernel reference: depth 12 all-compiled throughput, no kernel
+ck_d12	exp/nki-qknorm	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1	mainline + NKI RoPE/QK-norm kernel: depth 12, 128K batch, warmdown 60%
+ck_d12_s1	exp/nki-qknorm	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_SEED=1	mainline + NKI kernel, seed 1
+ck_d12_mlr03	exp/nki-qknorm	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_MATRIX_LR=0.03	mainline+kernel, Muon LR 0.03 (batch doubled to 128K)
+ck_d12_mlr02	exp/nki-qknorm	1	1800	--compile	NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_TOTAL_BATCH_SIZE=131072 NEURON_HP_WARMDOWN_FRAC=0.6 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_MATRIX_LR=0.02	mainline+kernel, Muon LR 0.02
+final_v1	exp/final	1	1800	-	-	final candidate: exp/final with plain launch command (defaults only)
+final_mlr03_s1	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.03 NEURON_HP_SEED=1	final config, Muon LR 0.03, seed 1 (confirm 0.03 > 0.025)
+final_mlr035	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.035	final config, Muon LR 0.035
+final_s1	exp/final	1	1800	-	NEURON_HP_SEED=1	final config (LR 0.025), seed 1 - paired reference for final_mlr03_s1
+k2_bhtd_d12	exp/nki-qknorm2	1	420	--compile	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_NKI_QKNORM=1 NEURON_HP_KERNEL_SELFTEST=1 NEURON_HP_NKI_QKNORM_BHTD=1	kernel v2: write [B,H,T,D] directly (no q/k transpose), selftest + throughput vs k_qknorm_d12 0.780 s/step
+final_mlr035_s1	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.035 NEURON_HP_SEED=1	final config, Muon LR 0.035, seed 1
+final_mlr045	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.045	final config, Muon LR 0.045 (trend still improving at 0.035)
+final_mlr06	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.06	final config, Muon LR 0.06 (find the turning point)
+final_mlr045_s1	exp/final	1	1800	-	NEURON_HP_MATRIX_LR=0.045 NEURON_HP_SEED=1	final config, Muon LR 0.045, seed 1 (plateau check)
+final_wd0	exp/final	1	1800	-	NEURON_HP_WEIGHT_DECAY=0.0	final config (LR 0.035), weight decay 0
+final_wd02	exp/final	1	1800	-	NEURON_HP_WEIGHT_DECAY=0.2	final config (LR 0.035), weight decay 0.2
+final_v2	exp/final	1	1800	-	-	final candidate v2: defaults only (Muon LR 0.035)
+final_s2	exp/final	1	1800	-	NEURON_HP_SEED=2	final config seed 2 (error bar for final result)
+final_s3	exp/final	1	1800	-	NEURON_HP_SEED=3	final config seed 3 (error bar for final result)
+final_elr2	exp/final	1	1800	-	NEURON_HP_EMBEDDING_LR=0.6	final config, embedding LR x2
+final_ulr2	exp/final	1	1800	-	NEURON_HP_UNEMBEDDING_LR=0.012	final config, lm_head LR x2
+final_slr05	exp/final	1	1800	-	NEURON_HP_SCALAR_LR=0.1	final config, scalar LR x0.5
+final_s4	exp/final	1	1800	-	NEURON_HP_SEED=4	final config seed 4 (error bar)
+final_s5	exp/final	1	1800	-	NEURON_HP_SEED=5	final config seed 5 (error bar)
+final_tb192k	exp/final	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=196608	final config, total batch 192K (accum 3; 128K beat 64K at 30 min)
+final_wdf05	exp/final	1	1800	-	NEURON_HP_WARMDOWN_FRAC=0.5	final config, warmdown 50%
+final_wdf07	exp/final	1	1800	-	NEURON_HP_WARMDOWN_FRAC=0.7	final config, warmdown 70%
+arch_vr	exp/arch	1	1800	-	NEURON_HP_VALUE_RESID=1	arch: value residual (v mixes layer-0 v)
+tp_fin_ref	exp/arch	1	900	-	NEURON_HP_PROFILE=1	throughput reference: final config
+tp_bf16	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_HP_BF16_MATMUL=1	throughput: bf16 matmul inputs (baseline matmuls were fp32)
+bf16_full	exp/nki-rmsnorm	1	1800	-	NEURON_HP_BF16_MATMUL=1	full: final config + bf16 matmul inputs
+tp_rms	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_HP_BF16_MATMUL=1 NEURON_HP_NKI_RMSNORM=1 NEURON_HP_KERNEL_SELFTEST=1	kernel: fused RMSNorm NKI (selftest + throughput, on bf16 matmul)
+bf16_d14	exp/nki-rmsnorm	1	1800	-	NEURON_HP_BF16_MATMUL=1 NEURON_HP_DEPTH=14	bf16 + depth 14 (896 wide): 2x faster steps may now afford a bigger model
+tp_rms2	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_HP_BF16_MATMUL=1 NEURON_HP_NKI_RMSNORM=1 NEURON_HP_KERNEL_SELFTEST=1	kernel: fused RMSNorm NKI retry (per-dtype kernels), selftest + throughput vs tp_bf16 0.788 s/step
+bf16_tb192k	exp/nki-rmsnorm	1	1800	-	NEURON_HP_BF16_MATMUL=1 NEURON_HP_TOTAL_BATCH_SIZE=196608	bf16 + total batch 192K (more steps now available)
+f2_d16	exp/final2	1	1800	-	NEURON_HP_DEPTH=16	final2 + depth 16 (1024 wide): trend d12 1.0872, d14 1.0805
+tp_qkvcat	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_HP_QKV_CAT=1 NEURON_HP_BF16_MATMUL=1	throughput: fused QKV matmul (on bf16 matmul)
+tp_cc_tr	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_CC_FLAGS=--model-type=transformer NEURON_HP_BF16_MATMUL=1	throughput: neuronx-cc --model-type=transformer (on bf16 matmul)
+tp_cc_O3	exp/nki-rmsnorm	1	900	-	NEURON_HP_PROFILE=1 NEURON_CC_FLAGS=-O3 NEURON_HP_BF16_MATMUL=1	throughput: neuronx-cc -O3 (on bf16 matmul)
+f2_tb192k	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=196608	final2 (depth 14) + total batch 192K (192K at depth 12 gave 1.0776)
+bf16_tb256k	exp/final2	1	1800	-	NEURON_HP_DEPTH=12 NEURON_HP_TOTAL_BATCH_SIZE=262144	bf16 depth 12 + total batch 256K (batch trend 128K 1.0872, 192K 1.0776)
+tp_lnc2_b8	exp/final2	2	900	-	NEURON_HP_PROFILE=1	host-bound check: lnc=2 x 4 procs, device batch 8 (telemetry: host CPU 94% busy, cores 43% busy)
+tp_lnc2_b16	exp/final2	2	900	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=16	host-bound check: lnc=2 x 4 procs, device batch 16 (2x memory per logical core)
+tp_lnc1_ref	exp/final2	1	900	-	NEURON_HP_PROFILE=1	reference for lnc=2 checks: lnc=1 x 8 procs, same config and budget
+f2_d16_b4	exp/final2	1	1800	-	NEURON_HP_DEPTH=16 NEURON_HP_DEVICE_BATCH_SIZE=4 NEURON_HP_TOTAL_BATCH_SIZE=196608	depth 16 with device batch 4 (halves activation memory; batch 8 OOMed) + 192K
+f2_tb256k	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=262144	P1 scale: depth 14 + total batch 256K
+f2_192_mlr045	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=196608 NEURON_HP_MATRIX_LR=0.045	P3 LR at new scale: depth 14 + 192K, Muon LR 0.045 (x1.3)
+f2_192_mlr06	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=196608 NEURON_HP_MATRIX_LR=0.06	P3 LR at new scale: depth 14 + 192K, Muon LR 0.06 (x1.7)
+f3_tb384k	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216	P1 scale: depth 14 + total batch 384K (trend 128K 1.0805?, 192K 1.0757, 256K 1.0667)
+f3_256_mlr045	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=262144 NEURON_HP_MATRIX_LR=0.045	P3 LR at best scale: depth 14 + 256K, Muon LR 0.045 (bigger batch may want higher LR)
+f4_tb512k	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=524288	P1 scale: depth 14 + total batch 512K (trend 192K 1.0757, 256K 1.0667, 384K 1.0605)
+f4_384_wdf07	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_WARMDOWN_FRAC=0.7	P4 recipe: depth 14 + 384K, warmdown 70%
+f4_384_mlr045	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_MATRIX_LR=0.045	P3 LR at best scale: depth 14 + 384K, Muon LR 0.045 (256K: 0.045 1.0654 vs 0.035 1.0667; bigger batch may want higher LR)
+f4_384_unet	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_UNET=1	P4 arch: depth 14 + 384K, U-net skips
+f4_384_alr15	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_EMBEDDING_LR=0.45 NEURON_HP_UNEMBEDDING_LR=0.009 NEURON_HP_SCALAR_LR=0.3	P3 Adam LRs x1.5 at 384K (tuned at 128K; sqrt batch scaling suggests ~x1.7)
+f4_384_sqrt	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_WARMDOWN_SHAPE=sqrt	P4 recipe: depth 14 + 384K, 1-sqrt warmdown
+f4_384_elr02	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_EMBEDDING_LR=0.2	P3 embedding LR x0.67 at 384K (Adam LRs x1.5 cost +0.014; elr x2 also hurt at 128K)
+f4_384_sc30	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_LOGIT_SOFTCAP=30.0	P4 recipe: depth 14 + 384K, logit softcap 30
+f4_384_mlr028	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_MATRIX_LR=0.028	P3 Muon LR 0.028 at 384K (0.045 lost: 1.0649 vs 1.0605)
+f5_sc12	exp/softcap	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_LOGIT_SOFTCAP=12.0	P4 logit softcap 12 (softcap now stored in checkpoint; softcap 30 had higher train loss than 15)
+f4_384_ulr004	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_UNEMBEDDING_LR=0.004	P3 lm_head LR x0.67 at 384K
+f5_unet_b4	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_UNET=1 NEURON_HP_DEVICE_BATCH_SIZE=4	P4 arch: U-net skips with device batch 4 (U-net OOMed at batch 8)
+f4_384_wd005	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_WEIGHT_DECAY=0.05	P4 weight decay 0.05 at 384K (wd 0 tied wd 0.1 at 128K)
+tp_b16_384	exp/final2	1	900	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=16 NEURON_HP_TOTAL_BATCH_SIZE=393216	P6 throughput: depth 14 + 384K, device batch 16 (accum 3; bf16 may fit)
+f4_tb320k	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=327680	P1 scale: total batch 320K (256K 1.0667, 384K 1.0605, 512K 1.0687)
+f6_d15	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_DEPTH=15 NEURON_HP_ASPECT_RATIO=59	P2 model size: depth 15 at width 896 (depth 14 beat 12 by 0.008 at 256K; width 1024 OOMs)
+f6_mlr040	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_MATRIX_LR=0.04	P3 Muon LR 0.04 at 384K (0.028 1.0710, 0.035 1.0605, 0.045 1.0649)
+f6_wd0	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_WEIGHT_DECAY=0.0	P4 weight decay 0 at 384K (wd 0.05 1.0602 vs 0.1 1.0605: follow the direction)
+f6_wdf05	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_WARMDOWN_FRAC=0.5	P4 warmdown 50% at 384K (70% tied)
+f6_gc1	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_GRAD_CLIP=1.0	P4 gradient clipping at norm 1.0 (last slot; must start by 10:17)
+f6_d13	exp/final2	1	1800	-	NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_DEPTH=13	P2 model size: depth 13 at width 896 (832 rounds up to 896); depth 15 at 896 lost (1.0737), so try fewer layers, ~7% more steps
+tp_b12_384	exp/final2	1	600	-	NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=12	P6 throughput: device batch 12 at 384K (accum 4; batch 16 OOMs). Reference: tp_final384 (batch 8) right after
+tp_final384	exp/final2	1	420	-	NEURON_HP_PROFILE=1	P6 profile of the final config (depth 14 + 384K): per-phase step time for the next bottleneck; last slot before 11:00

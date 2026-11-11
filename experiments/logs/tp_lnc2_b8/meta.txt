@@ -1,0 +1,12 @@
+id: tp_lnc2_b8
+ref: exp/final2
+commit: 3b8e624
+launch: NEURON_LOGICAL_NC_CONFIG=2 torchrun --standalone --nproc_per_node=4 train.py
+args: 
+env: NEURON_HP_PROFILE=1
+max_train_seconds: 900
+desc: host-bound check: lnc=2 x 4 procs, device batch 8 (telemetry: host CPU 94% busy, cores 43% busy)
+start_utc: 2026-11-10T18:28:09Z
+end_utc: 2026-11-10T18:50:39Z
+wall_seconds: 1229
+exit_code: 0

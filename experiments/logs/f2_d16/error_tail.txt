@@ -1,0 +1,50 @@
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 878510)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878510
+[3]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 878511)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878511
+[4]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 878512)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878512
+[5]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 878513)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878513
+[6]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 878515)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878515
+[7]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 7 (local_rank: 7)
+  exitcode  : -6 (pid: 878516)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 878516
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-10_15:56:35
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 878514)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,430 @@
+[W1110 15:54:12.087056993 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+W1110 15:54:12.897000 878494 torch/distributed/run.py:851] 
+W1110 15:54:12.897000 878494 torch/distributed/run.py:851] *****************************************
+W1110 15:54:12.897000 878494 torch/distributed/run.py:851] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1110 15:54:12.897000 878494 torch/distributed/run.py:851] *****************************************
+[W1110 15:54:14.210285531 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.215018331 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.273192779 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.280830276 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.826395299 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.850656108 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.995889939 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1110 15:54:15.027201841 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+2026-Nov-10 15:54:22.0113 878509:878509 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:22.0116 878509:878509 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:22.0119 878509:878509 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:22.0121 878509:878509 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0672 878514:878514 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0675 878514:878514 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0677 878514:878514 [5] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0680 878514:878514 [5] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0686 878513:878513 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0688 878513:878513 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0691 878513:878513 [4] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0693 878513:878513 [4] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0697 878515:878515 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0698 878516:878516 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0699 878515:878515 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0699 878511:878511 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0699 878511:878511 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0699 878511:878511 [2] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0699 878511:878511 [2] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0701 878516:878516 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0703 878515:878515 [6] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0705 878516:878516 [7] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0707 878515:878515 [6] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0709 878516:878516 [7] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0742 878512:878512 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0742 878510:878510 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-10 15:54:35.0744 878512:878512 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0746 878510:878510 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-10 15:54:35.0748 878512:878512 [3] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0750 878510:878510 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-10 15:54:35.0752 878512:878512 [3] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-10 15:54:35.0754 878510:878510 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+device=neuron dtype=torch.bfloat16 world_size=8
+training target=1000000 steps max_seconds=1800 official_budget=1800s
+model_config={
+  "sequence_len": 1024,
+  "vocab_size": 8192,
+  "n_layer": 16,
+  "n_head": 8,
+  "n_embd": 1024,
+  "value_resid": false,
+  "unet": false
+}
+num_params=218,103,840 flops_per_token=1.459618e+09
+adamw_core compiled
+muon_core compiled
+bucket_allreduce=False compile_opt=True
+torch.compile enabled (backend=neuron)
+micro_tokens=65,536 grad_accum_steps=2
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+2026-Nov-10 15:56:33.103788 878514:878599 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (536870912 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:33.106721 878514:878599 ERROR  TDRV:tdrv_scratchpad_reserve                 Failed to allocate virtual scratchpad!
+2026-Nov-10 15:56:33.108908 878514:878599 ERROR  NMGR:dlr_kelf_stage                          Failed to create logical core info for subgraph 0 to 0
+2026-Nov-10 15:56:33.111138 878514:878599 ERROR  NMGR:kmgr_load_nn_internal_v2                Failed to stage graph to NeuronCore
+2026-Nov-10 15:56:33.290409 878509:878548 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:33.294730 878509:878548 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:33.297159 878509:878548 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:
+2026-Nov-10 15:56:33.299559 878509:878548 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------
+2026-Nov-10 15:56:33.301837 878509:878548 ERROR   NRT:nrt_infodump                            NRT version: 2.33.10.0 (3dcef56f04438fb7a53619634a3d86be0f610988)
+2026-Nov-10 15:56:33.304112 878509:878548 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.23.9.0 (67b9c13b69eaf9fa4fb1c0200d175e3b22de1979) loaded from "libnrtucode_extisa.so"
+2026-Nov-10 15:56:33.306895 878509:878548 ERROR   NRT:nrt_infodump                            CCOM version: 2.33.10.0- (compat 92)
+2026-Nov-10 15:56:33.308819 878509:878548 ERROR   NRT:nrt_infodump                            NCFW version: 2.33.5.0 (2b1991dce9f274619aa76144e07f0a9918345423)
+2026-Nov-10 15:56:33.311072 878509:878548 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
+2026-Nov-10 15:56:33.312952 878509:878548 ERROR   NRT:nrt_infodump                            Cluster ID: 15696533136799037707
+2026-Nov-10 15:56:33.314806 878509:878548 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
+2026-Nov-10 15:56:33.318641 878509:878548 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.320463 878509:878548 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
+
+2026-Nov-10 15:56:33.322648 878509:878548 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
+2026-Nov-10 15:56:33.324672 878509:878548 ERROR   NRT:nrt_infodump                            LNC: 0
+2026-Nov-10 15:56:33.326009 878509:878548 ERROR   NRT:nrt_infodump                            Visible cores: 0
+2026-Nov-10 15:56:33.327478 878509:878548 ERROR   NRT:nrt_infodump                            Environment:
+2026-Nov-10 15:56:33.328874 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_HP_DEPTH=16
+2026-Nov-10 15:56:33.330621 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_LOGICAL_NC_CONFIG=1
+2026-Nov-10 15:56:33.332999 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_LAUNCH_BLOCKING=0
+2026-Nov-10 15:56:33.334750 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ALLOW_LEGACY_NEFF=1
+2026-Nov-10 15:56:33.336577 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
+2026-Nov-10 15:56:33.338338 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
+2026-Nov-10 15:56:33.340645 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
+2026-Nov-10 15:56:33.342623 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.344918 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
+2026-Nov-10 15:56:33.347315 878509:878548 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
+2026-Nov-10 15:56:33.383638 878514:878599 ERROR  NMGR:kmgr_load_nn_post_metrics               Failed to load NN: module.neff, err: 4
+2026-Nov-10 15:56:33.385633 878514:878599 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:
+2026-Nov-10 15:56:33.387382 878514:878599 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------
+2026-Nov-10 15:56:33.389281 878514:878599 ERROR   NRT:nrt_infodump                            NRT version: 2.33.10.0 (3dcef56f04438fb7a53619634a3d86be0f610988)
+2026-Nov-10 15:56:33.387860 878516:878623 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:33.393911 878514:878599 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.23.9.0 (67b9c13b69eaf9fa4fb1c0200d175e3b22de1979) loaded from "libnrtucode_extisa.so"
+2026-Nov-10 15:56:33.394262 878516:878623 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:33.396110 878514:878599 ERROR   NRT:nrt_infodump                            CCOM version: 2.33.10.0- (compat 92)
+2026-Nov-10 15:56:33.399264 878516:878623 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:
+2026-Nov-10 15:56:33.399659 878514:878599 ERROR   NRT:nrt_infodump                            NCFW version: 2.33.5.0 (2b1991dce9f274619aa76144e07f0a9918345423)
+2026-Nov-10 15:56:33.401171 878516:878623 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------
+2026-Nov-10 15:56:33.402906 878514:878599 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
+2026-Nov-10 15:56:33.406071 878514:878599 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
+2026-Nov-10 15:56:33.406088 878514:878599 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
+2026-Nov-10 15:56:33.406094 878514:878599 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.406116 878514:878599 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
+
+2026-Nov-10 15:56:33.406121 878514:878599 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
+2026-Nov-10 15:56:33.406127 878514:878599 ERROR   NRT:nrt_infodump                            Visible cores: 5
+2026-Nov-10 15:56:33.406132 878514:878599 ERROR   NRT:nrt_infodump                            Environment:
+2026-Nov-10 15:56:33.406138 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_HP_DEPTH=16
+2026-Nov-10 15:56:33.406142 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_LOGICAL_NC_CONFIG=1
+2026-Nov-10 15:56:33.406146 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_LAUNCH_BLOCKING=0
+2026-Nov-10 15:56:33.406150 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ALLOW_LEGACY_NEFF=1
+2026-Nov-10 15:56:33.404680 878516:878623 ERROR   NRT:nrt_infodump                            NRT version: 2.33.10.0 (3dcef56f04438fb7a53619634a3d86be0f610988)
+2026-Nov-10 15:56:33.406158 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
+2026-Nov-10 15:56:33.407824 878516:878623 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.23.9.0 (67b9c13b69eaf9fa4fb1c0200d175e3b22de1979) loaded from "libnrtucode_extisa.so"
+2026-Nov-10 15:56:33.408983 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
+2026-Nov-10 15:56:33.410952 878516:878623 ERROR   NRT:nrt_infodump                            CCOM version: 2.33.10.0- (compat 92)
+2026-Nov-10 15:56:33.412242 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
+2026-Nov-10 15:56:33.413742 878516:878623 ERROR   NRT:nrt_infodump                            NCFW version: 2.33.5.0 (2b1991dce9f274619aa76144e07f0a9918345423)
+2026-Nov-10 15:56:33.416021 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.416387 878516:878623 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
+2026-Nov-10 15:56:33.417720 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
+2026-Nov-10 15:56:33.418799 878516:878623 ERROR   NRT:nrt_infodump                            Cluster ID: 15696533136799037707
+2026-Nov-10 15:56:33.420136 878514:878599 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
+2026-Nov-10 15:56:33.421460 878516:878623 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
+2026-Nov-10 15:56:33.446736 878516:878623 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.448295 878516:878623 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
+
+2026-Nov-10 15:56:33.450144 878516:878623 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
+2026-Nov-10 15:56:33.451890 878516:878623 ERROR   NRT:nrt_infodump                            LNC: 0
+2026-Nov-10 15:56:33.453477 878516:878623 ERROR   NRT:nrt_infodump                            Visible cores: 7
+2026-Nov-10 15:56:33.454937 878516:878623 ERROR   NRT:nrt_infodump                            Environment:
+2026-Nov-10 15:56:33.456188 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_HP_DEPTH=16
+2026-Nov-10 15:56:33.457666 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_LOGICAL_NC_CONFIG=1
+2026-Nov-10 15:56:33.459246 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_LAUNCH_BLOCKING=0
+2026-Nov-10 15:56:33.460759 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ALLOW_LEGACY_NEFF=1
+2026-Nov-10 15:56:33.462371 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
+2026-Nov-10 15:56:33.463893 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
+2026-Nov-10 15:56:33.465961 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
+2026-Nov-10 15:56:33.467775 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.469876 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
+2026-Nov-10 15:56:33.472640 878516:878623 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
+2026-Nov-10 15:56:33.843264 878511:878660 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (536870912 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:33.845984 878511:878660 ERROR  TDRV:tdrv_scratchpad_reserve                 Failed to allocate virtual scratchpad!
+2026-Nov-10 15:56:33.847708 878511:878660 ERROR  NMGR:dlr_kelf_stage                          Failed to create logical core info for subgraph 0 to 0
+2026-Nov-10 15:56:33.849980 878511:878660 ERROR  NMGR:kmgr_load_nn_internal_v2                Failed to stage graph to NeuronCore
+2026-Nov-10 15:56:33.927784 878514:878599 ERROR   NRT:nrt_load                                Failed to load nrt model
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/home/ubuntu/workspace/exp/train.py", line 1457, in <module>
+[rank5]:     main()
+[rank5]:   File "/home/ubuntu/workspace/exp/train.py", line 1285, in main
+[rank5]:     x, y, loader_state = next(train_loader)
+[rank5]:                          ^^^^^^^^^^^^^^^^^^
+[rank5]:   File "/home/ubuntu/workspace/exp/prepare.py", line 516, in make_dataloader
+[rank5]:     inputs.copy_(cpu_inputs, non_blocking=pin_memory)
+[rank5]: RuntimeError: NRT Execution error occurred on Neuron for operation=model_default
+[rank5]: error message="NRT EXECUTION FAILED: Failed to load model, Failed to allocate resource"
+[rank5]: Note: Neuron errors are reported asynchronously. The Python traceback shows where the
+[rank5]: error was detected (synchronization point), not necessarily where the failing operation
+[rank5]: was dispatched. For synchronous error reporting, set NEURON_LAUNCH_BLOCKING=1.
+2026-Nov-10 15:56:33.943942 878509:878548 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+2026-Nov-10 15:56:33.946867 878509:878548 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:33.949755 878509:878548 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:34.031678 878516:878623 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+2026-Nov-10 15:56:34.034707 878516:878623 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:34.037253 878516:878623 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:34.045425 878511:878660 ERROR  NMGR:kmgr_load_nn_post_metrics               Failed to load NN: module.neff, err: 4
+2026-Nov-10 15:56:34.047209 878511:878660 ERROR   NRT:nrt_infodump                            Neuron runtime information - please include in any support request:
+2026-Nov-10 15:56:34.049423 878511:878660 ERROR   NRT:nrt_infodump                            ------------->8------------[ cut here ]------------>8-------------
+2026-Nov-10 15:56:34.051481 878511:878660 ERROR   NRT:nrt_infodump                            NRT version: 2.33.10.0 (3dcef56f04438fb7a53619634a3d86be0f610988)
+2026-Nov-10 15:56:34.053605 878511:878660 ERROR   NRT:nrt_infodump                            Embedded FW version: 1.23.9.0 (67b9c13b69eaf9fa4fb1c0200d175e3b22de1979) loaded from "libnrtucode_extisa.so"
+2026-Nov-10 15:56:34.056425 878511:878660 ERROR   NRT:nrt_infodump                            CCOM version: 2.33.10.0- (compat 92)
+2026-Nov-10 15:56:34.058177 878511:878660 ERROR   NRT:nrt_infodump                            NCFW version: 2.33.5.0 (2b1991dce9f274619aa76144e07f0a9918345423)
+2026-Nov-10 15:56:34.060486 878511:878660 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
+2026-Nov-10 15:56:34.062184 878511:878660 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
+2026-Nov-10 15:56:34.064245 878511:878660 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
+2026-Nov-10 15:56:34.066707 878511:878660 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:34.068442 878511:878660 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
+
+2026-Nov-10 15:56:34.070594 878511:878660 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
+2026-Nov-10 15:56:34.073053 878511:878660 ERROR   NRT:nrt_infodump                            Visible cores: 2
+2026-Nov-10 15:56:34.074487 878511:878660 ERROR   NRT:nrt_infodump                            Environment:
+2026-Nov-10 15:56:34.075996 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_HP_DEPTH=16
+2026-Nov-10 15:56:34.077599 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_LOGICAL_NC_CONFIG=1
+2026-Nov-10 15:56:34.079355 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_LAUNCH_BLOCKING=0
+2026-Nov-10 15:56:34.080902 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ALLOW_LEGACY_NEFF=1
+2026-Nov-10 15:56:34.083144 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
+2026-Nov-10 15:56:34.084779 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
+2026-Nov-10 15:56:34.086554 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
+2026-Nov-10 15:56:34.088243 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:34.090340 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
+2026-Nov-10 15:56:34.092031 878511:878660 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
+2026-Nov-10 15:56:34.434725 878509:878548 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+2026-Nov-10 15:56:34.437276 878509:878548 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:34.441253 878509:878548 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:34.552449 878516:878623 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+2026-Nov-10 15:56:34.555063 878516:878623 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:34.558685 878516:878623 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:34.569213 878511:878660 ERROR   NRT:nrt_load                                Failed to load nrt model
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/ubuntu/workspace/exp/train.py", line 1457, in <module>
+[rank2]:     main()
+[rank2]:   File "/home/ubuntu/workspace/exp/train.py", line 1285, in main
+[rank2]:     x, y, loader_state = next(train_loader)
+[rank2]:                          ^^^^^^^^^^^^^^^^^^
+[rank2]:   File "/home/ubuntu/workspace/exp/prepare.py", line 516, in make_dataloader
+[rank2]:     inputs.copy_(cpu_inputs, non_blocking=pin_memory)
+[rank2]: RuntimeError: NRT Execution error occurred on Neuron for operation=model_default
+[rank2]: error message="NRT EXECUTION FAILED: Failed to load model, Failed to allocate resource"
+[rank2]: Note: Neuron errors are reported asynchronously. The Python traceback shows where the
+[rank2]: error was detected (synchronization point), not necessarily where the failing operation
+[rank2]: was dispatched. For synchronous error reporting, set NEURON_LAUNCH_BLOCKING=1.
+2026-Nov-10 15:56:35.014757 878509:878548 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+[rank0]:[W1110 15:56:35.226955081 NeuronLogging.h:103] Warning: [Neuron] [WARNING] [torch_neuronx/csrc/core/utils/ErrorRecovery.cpp:100] OOM recovery failed after shelves cleanup + cache drain op= neuron::alloc::lazy nrt_status=NRT_RESOURCE  (function log)
+[rank0]:[W1110 15:56:35.226974959 NeuronMetrics.cpp:604] Warning: Neuron OOM: requested_size=4194304 | Peak memory stats (at allocated_bytes peak): allocated_bytes.current=10690712576 allocated_bytes.peak=10690712576 reserved_bytes.current=10693378048 reserved_bytes.peak=10693378048 active_bytes.current=10690691405 active_bytes.peak=10690691405 internal_fragmentation=21171 num_alloc_retries=0 num_ooms=0 num_alloc_deferred=0 num_alloc_drain_retry_ok=0 num_alloc_drain_retry_fail=0 (function RecordOOMFailure)
+[rank0]:[W1110 15:56:35.227324109 NeuronMetrics.cpp:647] Warning: Neuron OOM: Segment pool state: segments=311 free_chunks=5 total_free=15079124224 largest_cached_free=2097152 nrt_free=15076425728 cached_free=2698496 allocated=10690679552 reserved=10693378048 active=10690658633 total_hbm=25769803776 (function RecordOOMFailure)
+2026-Nov-10 15:56:35.017581 878509:878548 ERROR  TDRV:print_lnc_hbm_details                   LNC size is 1. Neuron Cores using this HBM: NC 4 and NC 5
+2026-Nov-10 15:56:35.021425 878509:878548 ERROR  TDRV:log_dev_mem_utilization                 ND 0:NC 4, current utilization:
+WARNING: Unable to get usage details for NC 5 as it is not being used by current process.
+2026-Nov-10 15:56:35.025624 878509:878548 ERROR  TDRV:log_dev_mem_usage_table                 Displaying Current Memory Utilization:
+(NOTE: the lines are LONG, and NEFF id to name mapping is printed after)
+
+              |          |  Model   |  Model   |          |  Shared  |          |          |DMA Rings |DMA Rings | DMA Rings |DMA Rings |           | Profiler |
+              |  TOTAL   |   Code   |Constants | Tensors  |Scratchpad|Scratchpad| Runtime  |    IO    |  Spill   |Collectives| Runtime  |Collectives| Buffers  |
+ND 0 HBM 2    | 11.556GB | 47.595MB |720.004KB | 9.959GB  | 1.500GB  | 256.000B | 1.384MB  | 68.000KB | 33.891MB | 95.000KB  | 72.000KB | 16.041MB  |  0.000B  |
+\_NEFF 1001   |167.312KB | 23.312KB |  0.000B  |   n/a    | 0.000B*  |  0.000B  |108.000KB | 32.000KB |  0.000B  |  0.000B   | 4.000KB  |  0.000B   |   n/a    |
+\_NEFF 1002   |192.398KB | 22.750KB |  0.000B  |   n/a    | 0.000B*  | 256.000B | 26.000KB | 4.000KB  |  0.000B  | 95.000KB  | 2.000KB  | 42.398KB  |   n/a   <<TRUNCATED>>
+2026-Nov-10 15:56:35.025722 878509:878548 ERROR  TDRV:log_dev_mem_usage_table                 Also logged memory breakdown to /tmp/neuron_mem_table_device_0_nc_4.log
+2026-Nov-10 15:56:35.028651 878509:878548 ERROR  TDRV:dml_dump                                Wrote nrt memory alloc debug info to /tmp/nrt_mem_log_device_0_6af33eb3.csv
+2026-Nov-10 15:56:35.035350 878509:878548 ERROR  TDRV:dml_driver_dump                         Wrote driver memory alloc debug info to /tmp/neuron_mem_log_device_0_hbm_2_6af33eb3.csv
+2026-Nov-10 15:56:35.038365 878509:878548 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:35.040862 878509:878548 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+2026-Nov-10 15:56:35.058693 878516:878623 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+[rank7]:[W1110 15:56:35.270336231 NeuronLogging.h:103] Warning: [Neuron] [WARNING] [torch_neuronx/csrc/core/utils/ErrorRecovery.cpp:100] OOM recovery failed after shelves cleanup + cache drain op= neuron::alloc::lazy nrt_status=NRT_RESOURCE  (function log)
+[rank7]:[W1110 15:56:35.270352215 NeuronMetrics.cpp:604] Warning: Neuron OOM: requested_size=4194304 | Peak memory stats (at allocated_bytes peak): allocated_bytes.current=10690712576 allocated_bytes.peak=10690712576 reserved_bytes.current=10693378048 reserved_bytes.peak=10693378048 active_bytes.current=10690691405 active_bytes.peak=10690691405 internal_fragmentation=21171 num_alloc_retries=0 num_ooms=0 num_alloc_deferred=0 num_alloc_drain_retry_ok=0 num_alloc_drain_retry_fail=0 (function RecordOOMFailure)
+[rank7]:[W1110 15:56:35.270587347 NeuronMetrics.cpp:647] Warning: Neuron OOM: Segment pool state: segments=311 free_chunks=5 total_free=15079124224 largest_cached_free=2097152 nrt_free=15076425728 cached_free=2698496 allocated=10690679552 reserved=10693378048 active=10690658633 total_hbm=25769803776 (function RecordOOMFailure)
+python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and_tpb: Assertion `m->is_used == true && m->tpb_map.map[pcore->device_tpb_idx] != 0' failed.
+2026-Nov-10 15:56:35.674919 878509:878548 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
+2026-Nov-10 15:56:35.677361 878509:878548 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (67108864 bytes): memory allocation failed (ret=-12)
+2026-Nov-10 15:56:35.680919 878509:878548 ERROR  TDRV:tensor_allocate                         Failed to allocate 67108864 bytes on DEVICE for tensor UNKNOWN.
+W1110 15:56:35.805000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878509 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878510 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878511 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878512 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878513 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878515 closing signal SIGTERM
+W1110 15:56:35.806000 878494 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 878516 closing signal SIGTERM
+E1110 15:57:03.237000 878494 torch/distributed/elastic/multiprocessing/api.py:986] failed (exitcode: 1) local_rank: 5 (pid: 878514) of binary: /home/ubuntu/workspace/native_venv/bin/python3
+Traceback (most recent call last):
+  File "/home/ubuntu/workspace/native_venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/run.py", line 990, in main
+    run(args)
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/run.py", line 981, in run
+    elastic_launch(
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 878509)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878509
+[2]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 878510)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878510
+[3]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 878511)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878511
+[4]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 878512)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878512
+[5]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 878513)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878513
+[6]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 878515)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 878515
+[7]:
+  time      : 2026-11-10_15:57:03
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 7 (local_rank: 7)
+  exitcode  : -6 (pid: 878516)
+  error_file: <N/A>
+  traceback : Signal 6 (SIGABRT) received by PID 878516
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-10_15:56:35
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 878514)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

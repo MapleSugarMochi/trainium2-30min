@@ -1,0 +1,12 @@
+id: f5_unet_b4
+ref: exp/final2
+commit: 637670a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_UNET=1 NEURON_HP_DEVICE_BATCH_SIZE=4
+max_train_seconds: 1800
+desc: P4 arch: U-net skips with device batch 4 (U-net OOMed at batch 8)
+start_utc: 2026-11-11T05:09:54Z
+end_utc: 2026-11-11T05:47:25Z
+wall_seconds: 2127
+exit_code: 0

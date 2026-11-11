@@ -1,0 +1,12 @@
+id: f6_gc1
+ref: exp/final2
+commit: 5c11635
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_GRAD_CLIP=1.0
+max_train_seconds: 1800
+desc: P4 gradient clipping at norm 1.0 (last slot; must start by 10:17)
+start_utc: 2026-11-11T09:38:00Z
+end_utc: 2026-11-11T09:39:13Z
+wall_seconds: 69
+exit_code: 1

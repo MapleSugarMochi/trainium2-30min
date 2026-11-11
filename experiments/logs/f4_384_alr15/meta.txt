@@ -1,0 +1,12 @@
+id: f4_384_alr15
+ref: exp/final2
+commit: 637670a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_EMBEDDING_LR=0.45 NEURON_HP_UNEMBEDDING_LR=0.009 NEURON_HP_SCALAR_LR=0.3
+max_train_seconds: 1800
+desc: P3 Adam LRs x1.5 at 384K (tuned at 128K; sqrt batch scaling suggests ~x1.7)
+start_utc: 2026-11-11T01:02:04Z
+end_utc: 2026-11-11T01:35:37Z
+wall_seconds: 1892
+exit_code: 0

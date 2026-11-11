@@ -1,0 +1,12 @@
+id: f4_384_mlr045
+ref: exp/final2
+commit: 637670a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_MATRIX_LR=0.045
+max_train_seconds: 1800
+desc: P3 LR at best scale: depth 14 + 384K, Muon LR 0.045 (256K: 0.045 1.0654 vs 0.035 1.0667; bigger batch may want higher LR)
+start_utc: 2026-11-11T00:15:22Z
+end_utc: 2026-11-11T00:48:48Z
+wall_seconds: 1886
+exit_code: 0

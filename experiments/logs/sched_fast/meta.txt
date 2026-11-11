@@ -1,0 +1,12 @@
+id: sched_fast
+ref: exp/fastopt
+commit: 9796703
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1
+max_train_seconds: 1800
+desc: full: b8 + compile + compiled Muon (no bucketed all-reduce)
+start_utc: 2026-11-08T20:56:27Z
+end_utc: 2026-11-08T21:29:05Z
+wall_seconds: 1859
+exit_code: 0

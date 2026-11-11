@@ -1,0 +1,12 @@
+id: f6_d13
+ref: exp/final2
+commit: 5c11635
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_DEPTH=13
+max_train_seconds: 1800
+desc: P2 model size: depth 13 at width 896 (832 rounds up to 896); depth 15 at 896 lost (1.0737), so try fewer layers, ~7% more steps
+start_utc: 2026-11-11T09:50:07Z
+end_utc: 2026-11-11T10:27:46Z
+wall_seconds: 2143
+exit_code: 0

@@ -1,0 +1,12 @@
+id: f2_tb256k
+ref: exp/final2
+commit: 3b8e624
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=262144
+max_train_seconds: 1800
+desc: P1 scale: depth 14 + total batch 256K
+start_utc: 2026-11-10T20:13:05Z
+end_utc: 2026-11-10T20:46:26Z
+wall_seconds: 1883
+exit_code: 0

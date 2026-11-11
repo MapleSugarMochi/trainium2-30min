@@ -1,0 +1,262 @@
+[W1111 09:38:06.392977159 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+W1111 09:38:06.203000 1355616 torch/distributed/run.py:851] 
+W1111 09:38:06.203000 1355616 torch/distributed/run.py:851] *****************************************
+W1111 09:38:06.203000 1355616 torch/distributed/run.py:851] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W1111 09:38:06.203000 1355616 torch/distributed/run.py:851] *****************************************
+[W1111 09:38:08.348787185 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.353025616 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.428037399 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.428193734 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.923387103 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.002985416 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.130174422 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+[W1111 09:38:08.154603144 OperatorEntry.cpp:208] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::gather.out(Tensor self, int dim, Tensor index, *, bool sparse_grad=False, Tensor(a!) out) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: PrivateUse1
+  previous kernel: registered at /pytorch/build/aten/src/ATen/RegisterCPU_3.cpp:7637
+       new kernel: registered at NeuronDispatcher.cpp:0 (function operator())
+2026-Nov-11 09:38:14.0830 1355631:1355631 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:14.0833 1355631:1355631 [0] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:14.0836 1355631:1355631 [0] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:14.0838 1355631:1355631 [0] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:14.0889 1355638:1355638 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:14.0892 1355638:1355638 [7] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:14.0894 1355638:1355638 [7] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:14.0897 1355638:1355638 [7] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0574 1355632:1355632 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0577 1355632:1355632 [1] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0579 1355632:1355632 [1] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0582 1355632:1355632 [1] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0597 1355633:1355633 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0600 1355633:1355633 [2] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0603 1355633:1355633 [2] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0605 1355633:1355633 [2] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0609 1355637:1355637 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0611 1355637:1355637 [6] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0614 1355637:1355637 [6] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0616 1355637:1355637 [6] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0625 1355635:1355635 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0628 1355635:1355635 [4] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0628 1355634:1355634 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0629 1355635:1355635 [4] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0632 1355636:1355636 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):273 CCOM WARN NET/OFI Failed to initialize rdma protocol
+2026-Nov-11 09:38:30.0632 1355636:1355636 [5] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0632 1355636:1355636 [5] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0632 1355636:1355636 [5] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0632 1355634:1355634 [3] int nccl_net_ofi_create_plugin(nccl_net_ofi_plugin_t**):416 CCOM WARN NET/OFI aws-ofi-nccl initialization failed
+2026-Nov-11 09:38:30.0633 1355635:1355635 [4] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+2026-Nov-11 09:38:30.0636 1355634:1355634 [3] ncclResult_t nccl_net_ofi_init(ncclDebugLogger_t):78 CCOM WARN NET/OFI Initializing plugin failed
+2026-Nov-11 09:38:30.0649 1355634:1355634 [3] net_plugin.cc:104 CCOM WARN OFI plugin initNet() failed is EFA enabled?
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  return func(*args, **kwargs)
+device=neuron dtype=torch.bfloat16 world_size=8
+training target=1000000 steps max_seconds=1800 official_budget=1800s
+model_config={
+  "sequence_len": 1024,
+  "vocab_size": 8192,
+  "n_layer": 14,
+  "n_head": 7,
+  "n_embd": 896,
+  "value_resid": false,
+  "unet": false,
+  "logit_softcap": 15.0
+}
+num_params=149,553,180 flops_per_token=1.007419e+09
+adamw_core compiled
+muon_core compiled
+bucket_allreduce=False compile_opt=True
+torch.compile enabled (backend=neuron)
+micro_tokens=65,536 grad_accum_steps=6
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support int64. Automatically casting to int32. Consider using int32 directly for better performance until native int64 support is added.
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/ubuntu/workspace/exp/train.py", line 1460, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/ubuntu/workspace/exp/train.py", line 1292, in main
+[rank0]:     torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
+[rank0]:   File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/nn/utils/clip_grad.py", line 42, in _no_grad_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/nn/utils/clip_grad.py", line 232, in clip_grad_norm_
+[rank0]:     _clip_grads_with_norm_(parameters, max_norm, total_norm, foreach)
+[rank0]:   File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/nn/utils/clip_grad.py", line 42, in _no_grad_wrapper
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/nn/utils/clip_grad.py", line 165, in _clip_grads_with_norm_
+[rank0]:     clip_coef = max_norm / (total_norm + 1e-6)
+[rank0]:                             ~~~~~~~~~~~^~~~~~
+[rank0]: RuntimeError: Compilation error occurred on Neuron for operation=aten::_foreach_norm.Scalar;
+[rank0]: error message="COMPILATION FAILED: 2026-11-11T09:39:10Z Non-signal exit. Backend exited with code 1 and stderr: (CollectiveCompute: SR-0_inst__I-128-0)Source Kernel "nkilib.experimental.foreach.foreach_norm.l2_norm_kernel_lnc0"File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/nkilib/experimental/foreach/foreach_norm.py",line 117 [INTERNAL_ERROR] [NCC_IBIR533] CollectiveKind::SendRecv is not a valid enum value for field CollectiveCompute.Kind on arch Trn2 - Choose a valid value for field CollectiveCompute.Kind"
+[rank0]: neff cache key=_foreach_norm.Scalar--_TL[[8192,896]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[1]:Float:S(C),[1]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[896,896]:Float:S(C),[3584,896]:Float:S(C),[896,3584]:Float:S(C),[8192,896]:Float:S(C)]_d2_None:cd47b8171ac56a23cc896e6ceb62fa0bfd9e8cf0bf9b08bd2a965094c3965433
+[rank0]: Note: Neuron errors are reported asynchronously. The Python traceback shows where the
+[rank0]: error was detected (synchronization point), not necessarily where the failing operation
+[rank0]: was dispatched. For synchronous error reporting, set NEURON_LAUNCH_BLOCKING=1.
+/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2082: UserWarning: Dynamo does not know how to trace the builtin `<unknown module>.pybind11_detail_function_record_v1_system_libstdcpp_gxx_abi_1xxx_use_cxx11_abi_1..` This function is either a Python builtin (e.g. _warnings.warn) or a third-party C/C++ Python extension (perhaps created with pybind).
+If it is a Python builtin, please file an issue on GitHub so the PyTorch team can add support for it and see the next case for a workaround.
+If it is a third-party C/C++ Python extension, please either wrap it into a PyTorch-understood custom operator (see https://pytorch.org/tutorials/advanced/custom_ops_landing_page.html for more details) or, if it is traceable, use `torch.compiler.allow_in_graph`.
+  torch._dynamo.utils.warn_once(explanation + "\n" + "\n".join(hints))
+W1111 09:39:12.367000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355632 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355633 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355634 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355635 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355636 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355637 closing signal SIGTERM
+W1111 09:39:12.368000 1355616 torch/distributed/elastic/multiprocessing/api.py:1012] Sending process 1355638 closing signal SIGTERM
+E1111 09:39:12.897000 1355616 torch/distributed/elastic/multiprocessing/api.py:986] failed (exitcode: 1) local_rank: 0 (pid: 1355631) of binary: /home/ubuntu/workspace/native_venv/bin/python3
+Traceback (most recent call last):
+  File "/home/ubuntu/workspace/native_venv/bin/torchrun", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 362, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/run.py", line 990, in main
+    run(args)
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/run.py", line 981, in run
+    elastic_launch(
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/workspace/native_venv/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+train.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 1355632)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355632
+[2]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 1355633)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355633
+[3]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 1355634)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355634
+[4]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 4 (local_rank: 4)
+  exitcode  : -15 (pid: 1355635)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355635
+[5]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 5 (local_rank: 5)
+  exitcode  : -15 (pid: 1355636)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355636
+[6]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 6 (local_rank: 6)
+  exitcode  : -15 (pid: 1355637)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355637
+[7]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 7 (local_rank: 7)
+  exitcode  : -15 (pid: 1355638)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 1355638
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-11_09:39:12
+  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 1355631)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

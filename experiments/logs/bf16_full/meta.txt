@@ -1,0 +1,12 @@
+id: bf16_full
+ref: exp/nki-rmsnorm
+commit: 1dd580d
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_BF16_MATMUL=1
+max_train_seconds: 1800
+desc: full: final config + bf16 matmul inputs
+start_utc: 2026-11-10T13:39:31Z
+end_utc: 2026-11-10T14:12:27Z
+wall_seconds: 1880
+exit_code: 0

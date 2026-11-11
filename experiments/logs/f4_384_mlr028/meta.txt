@@ -1,0 +1,12 @@
+id: f4_384_mlr028
+ref: exp/final2
+commit: 637670a
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216 NEURON_HP_MATRIX_LR=0.028
+max_train_seconds: 1800
+desc: P3 Muon LR 0.028 at 384K (0.045 lost: 1.0649 vs 1.0605)
+start_utc: 2026-11-11T03:22:34Z
+end_utc: 2026-11-11T03:56:01Z
+wall_seconds: 1890
+exit_code: 0

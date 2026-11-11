@@ -1,0 +1,12 @@
+id: tp_b16_384
+ref: exp/final2
+commit: 64dbaa3
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_PROFILE=1 NEURON_HP_DEVICE_BATCH_SIZE=16 NEURON_HP_TOTAL_BATCH_SIZE=393216
+max_train_seconds: 900
+desc: P6 throughput: depth 14 + 384K, device batch 16 (accum 3; bf16 may fit)
+start_utc: 2026-11-11T06:25:06Z
+end_utc: 2026-11-11T06:27:18Z
+wall_seconds: 129
+exit_code: 1

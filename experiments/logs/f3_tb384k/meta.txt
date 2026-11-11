@@ -1,0 +1,12 @@
+id: f3_tb384k
+ref: exp/final2
+commit: 0a20a39
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_TOTAL_BATCH_SIZE=393216
+max_train_seconds: 1800
+desc: P1 scale: depth 14 + total batch 384K (trend 128K 1.0805?, 192K 1.0757, 256K 1.0667)
+start_utc: 2026-11-10T21:56:41Z
+end_utc: 2026-11-10T22:30:10Z
+wall_seconds: 1887
+exit_code: 0

@@ -1,0 +1,12 @@
+id: tp_qkvcat
+ref: exp/nki-rmsnorm
+commit: 2449244
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_PROFILE=1 NEURON_HP_QKV_CAT=1 NEURON_HP_BF16_MATMUL=1
+max_train_seconds: 900
+desc: throughput: fused QKV matmul (on bf16 matmul)
+start_utc: 2026-11-10T15:58:11Z
+end_utc: 2026-11-10T16:19:05Z
+wall_seconds: 1156
+exit_code: 0

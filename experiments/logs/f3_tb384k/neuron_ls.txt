@@ -1,0 +1,16 @@
+instance-type: trn2.3xlarge
+instance-id: i-0505be8aed69d52e6
+logical-neuroncore-config: 2
++--------+--------+----------+--------+--------------+---------+----------+------+------------------------------------------+---------+
+| NEURON | NEURON |  NEURON  | NEURON |     PCI      |   PID   |   CPU    | NUMA |                 COMMAND                  | RUNTIME |
+| DEVICE | CORES  | CORE IDS | MEMORY |     BDF      |         | AFFINITY | NODE |                                          | VERSION |
++--------+--------+----------+--------+--------------+---------+----------+------+------------------------------------------+---------+
+| 0      | 4      | 0-3      | 96 GB  | 0000:33:00.0 | 1035045 | 0-11     | 0    | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035046 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035047 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035048 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035049 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035050 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035051 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
+|        |        |          |        |              | 1035052 |          |      | /home/ubuntu/workspace/native_venv/bi... | 2.33.10 |
++--------+--------+----------+--------+--------------+---------+----------+------+------------------------------------------+---------+

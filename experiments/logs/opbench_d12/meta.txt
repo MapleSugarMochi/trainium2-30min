@@ -1,0 +1,12 @@
+id: opbench_d12
+ref: exp/opbench
+commit: 7e2d0a5
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: --compile
+env: NEURON_HP_DEVICE_BATCH_SIZE=8 NEURON_HP_COMPILE_OPT=1 NEURON_HP_COMPILE_ADAMW=1 NEURON_HP_DEPTH=12 NEURON_HP_OPBENCH=1
+max_train_seconds: 300
+desc: analysis: per-component fwd+bwd time at depth 12, compiled
+start_utc: 2026-11-09T09:13:36Z
+end_utc: 2026-11-09T09:24:36Z
+wall_seconds: 546
+exit_code: 0

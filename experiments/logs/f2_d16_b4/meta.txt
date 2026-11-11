@@ -1,0 +1,12 @@
+id: f2_d16_b4
+ref: exp/final2
+commit: 3b8e624
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_DEPTH=16 NEURON_HP_DEVICE_BATCH_SIZE=4 NEURON_HP_TOTAL_BATCH_SIZE=196608
+max_train_seconds: 1800
+desc: depth 16 with device batch 4 (halves activation memory; batch 8 OOMed) + 192K
+start_utc: 2026-11-10T19:33:49Z
+end_utc: 2026-11-10T20:11:55Z
+wall_seconds: 2138
+exit_code: 0

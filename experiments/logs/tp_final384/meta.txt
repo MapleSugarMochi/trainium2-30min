@@ -1,0 +1,12 @@
+id: tp_final384
+ref: exp/final2
+commit: a0858e9
+launch: NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
+args: 
+env: NEURON_HP_PROFILE=1
+max_train_seconds: 420
+desc: P6 profile of the final config (depth 14 + 384K): per-phase step time for the next bottleneck; last slot before 11:00
+start_utc: 2026-11-11T10:41:02Z
+end_utc: 2026-11-11T10:51:29Z
+wall_seconds: 508
+exit_code: 0

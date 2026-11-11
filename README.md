@@ -1,6 +1,6 @@
 # Training a language model in 30 minutes on one AWS Trainium2 chip
 
-My entry for Round 1 of the [AWS Trainium Frontier](https://trainium-frontier.devpost.com/) challenge. The task was to train a GPT-style language model from scratch on one Trn2 chip within a 30-minute budget, and get the lowest validation bits-per-byte (val_bpb) on a fixed eval.
+A testing task based on Phase 1 of the [AWS Trainium Frontier](https://trainium-frontier.devpost.com/) competition, done after the competition had closed and under its rules. The task was to train a GPT-style language model from scratch on one Trn2 chip within a 30-minute budget, and get the lowest validation bits-per-byte (val_bpb) on a fixed eval.
 
 **Result: val_bpb 1.0605, down from the starter kit's 1.2591** (−0.199). This came from 130 queued experiments over four days.
 
@@ -45,7 +45,7 @@ The remaining bottleneck is device memory: device batch 12/16, depth 16 and U-ne
 | `results.tsv` | All 130 runs: commit, val_bpb, steps, s/step, keep/discard/crash, description |
 | `experiments/` | Write-up, raw run table, experiment queue, runner scripts, logs of 37 key runs, figures |
 
-The complete git history, with every `exp/*` branch and the logs of all 130 runs, is in the [competition fork](https://github.com/MapleSugarMochi/trn-r1-test).
+The experiments were developed in a separate, non-public repository with one commit per experiment. Commit hashes in `results.tsv` and `experiments/` refer to that history; this repository carries the final code, the full run table and the logs of 37 key runs.
 
 ## Running it
 

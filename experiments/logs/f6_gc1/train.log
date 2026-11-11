@@ -203,49 +203,49 @@ train.py FAILED
 Failures:
 [1]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 1 (local_rank: 1)
   exitcode  : -15 (pid: 1355632)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355632
 [2]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 2 (local_rank: 2)
   exitcode  : -15 (pid: 1355633)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355633
 [3]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 3 (local_rank: 3)
   exitcode  : -15 (pid: 1355634)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355634
 [4]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 4 (local_rank: 4)
   exitcode  : -15 (pid: 1355635)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355635
 [5]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 5 (local_rank: 5)
   exitcode  : -15 (pid: 1355636)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355636
 [6]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 6 (local_rank: 6)
   exitcode  : -15 (pid: 1355637)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1355637
 [7]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 7 (local_rank: 7)
   exitcode  : -15 (pid: 1355638)
   error_file: <N/A>
@@ -254,7 +254,7 @@ Failures:
 Root Cause (first observed failure):
 [0]:
   time      : 2026-11-11_09:39:12
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 0 (local_rank: 0)
   exitcode  : 1 (pid: 1355631)
   error_file: <N/A>

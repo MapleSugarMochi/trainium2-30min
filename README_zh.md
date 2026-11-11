@@ -1,6 +1,6 @@
 # 在一颗 AWS Trainium2 芯片上 30 分钟训练语言模型
 
-这是 [AWS Trainium Frontier](https://trainium-frontier.devpost.com/) 第一轮的参赛项目。任务是在一颗 Trn2 芯片上从零训练 GPT 风格的语言模型，限时 30 分钟，目标是在固定评测上得到尽可能低的 val_bpb（每字节比特数）。
+这是一道基于 [AWS Trainium Frontier](https://trainium-frontier.devpost.com/) 比赛第一阶段的测试题，在比赛结束后按比赛规则完成。任务是在一颗 Trn2 芯片上从零训练 GPT 风格的语言模型，限时 30 分钟，目标是在固定评测上得到尽可能低的 val_bpb（每字节比特数）。
 
 **结果：val_bpb 1.0605，starter kit 基线为 1.2591（降低 0.199）。** 四天内共排队运行了 130 个实验。
 
@@ -24,7 +24,7 @@
 | `results.tsv` | 全部 130 次运行：提交、val_bpb、步数、秒/步、保留/丢弃/崩溃、说明 |
 | `experiments/` | 实验说明、原始结果表、实验队列、runner 脚本、37 个关键运行的日志、图 |
 
-完整 git 历史（每个 `exp/*` 分支和全部 130 次运行的日志）在[比赛 fork](https://github.com/MapleSugarMochi/trn-r1-test)。
+实验在另一个未公开的仓库中完成，每个实验一个提交；`results.tsv` 和 `experiments/` 里的提交哈希指向那份历史。本仓库包含最终代码、完整结果表和 37 个关键运行的日志。
 
 ## 许可
 

@@ -1,6 +1,6 @@
 # Experiments
 
-> Commit hashes, branch names and the `results` / `ops` branches below refer to the [competition fork](https://github.com/MapleSugarMochi/trn-r1-test), which holds the full git history.
+> Commit hashes and branch names below refer to the original development repository, which is not public. The run table, runner scripts and key logs are copied into this folder.
 
 Every experiment behind the submission, gathered in one place. The final result and its explanation are in [`../REPORT.md`](../REPORT.md). The per-run verdicts (keep / discard / crash) are in [`../results.tsv`](../results.tsv).
 
@@ -14,8 +14,8 @@ Every experiment behind the submission, gathered in one place. The final result 
 | --- | --- |
 | `all_runs.tsv` | Raw table written by the runner: one row per run (130 runs) with run id, commit, branch, launch shape, time budget, extra args, env overrides, val_bpb, steps, s/step, startup, train and eval seconds, status, description. |
 | `queue.tsv` | The experiment queue as submitted: run id, git ref, `lnc`, time budget, args, env overrides and the hypothesis each run tested. |
-| `logs/<run id>/` | `train.log`, `eval.log` and `meta.txt` for 37 key runs (the chain from baseline to final, plus the informative failures). Logs for all 130 runs are on the [`results`](https://github.com/MapleSugarMochi/trn-r1-test/tree/results) branch under `runs/`. |
-| `tools/agent.sh`, `tools/run_once.sh` | The runner that executed the queue on the instance (copy of the [`ops`](https://github.com/MapleSugarMochi/trn-r1-test/tree/ops) branch). |
+| `logs/<run id>/` | `train.log`, `eval.log` and `meta.txt` for 37 key runs (the chain from baseline to final, plus the informative failures). |
+| `tools/agent.sh`, `tools/run_once.sh` | The runner that executed the queue on the instance. |
 | `tools/make_results.py` | Builds `../results.tsv` from `all_runs.tsv`. |
 | `figures/` | Charts used in this README. |
 
@@ -106,11 +106,12 @@ NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
 python prepare.py eval-public --train-py train.py --checkpoint <out-dir>/final.pt
 ```
 
-Any other run: check out its commit from `all_runs.tsv` and prefix the same command with its `env` column. For example, `f4_tb512k`:
+Most other runs: prefix the same command with the run's `env` column from `all_runs.tsv`; the knobs used in phase 2 all exist in the final `train.py`. For example, `f4_tb512k`:
 
 ```
-git checkout 637670a
 NEURON_HP_TOTAL_BATCH_SIZE=524288 NEURON_LOGICAL_NC_CONFIG=1 torchrun --standalone --nproc_per_node=8 train.py
 ```
+
+Phase 1 runs used earlier versions of `train.py`; their commits are in the non-public development repository.
 
 Runs are deterministic for a given config and seed. Time-based stopping can shift the step count by a few steps (about ±0.001 val_bpb).

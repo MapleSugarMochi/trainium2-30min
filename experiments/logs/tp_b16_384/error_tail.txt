@@ -1,39 +1,39 @@
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 1 (local_rank: 1)
   exitcode  : -15 (pid: 1269767)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269767
 [3]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 2 (local_rank: 2)
   exitcode  : -15 (pid: 1269768)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269768
 [4]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 3 (local_rank: 3)
   exitcode  : -6 (pid: 1269769)
   error_file: <N/A>
   traceback : Signal 6 (SIGABRT) received by PID 1269769
 [5]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 4 (local_rank: 4)
   exitcode  : -15 (pid: 1269770)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269770
 [6]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 5 (local_rank: 5)
   exitcode  : -6 (pid: 1269771)
   error_file: <N/A>
   traceback : Signal 6 (SIGABRT) received by PID 1269771
 [7]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 7 (local_rank: 7)
   exitcode  : -15 (pid: 1269773)
   error_file: <N/A>
@@ -42,7 +42,7 @@
 Root Cause (first observed failure):
 [0]:
   time      : 2026-11-11_06:27:16
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 6 (local_rank: 6)
   exitcode  : -6 (pid: 1269772)
   error_file: <N/A>

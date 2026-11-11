@@ -160,7 +160,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.169997 1269772:1269840 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:14.171755 1269772:1269840 ERROR   NRT:nrt_infodump                            Cluster ID: 11461337859022959807
 2026-Nov-11 06:27:14.174468 1269772:1269840 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:14.177506 1269772:1269840 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:14.177506 1269772:1269840 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:14.179124 1269772:1269840 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:14.180969 1269772:1269840 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -176,7 +176,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.197763 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:14.200156 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:14.201691 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:14.203437 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:14.203437 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:14.205545 1269772:1269840 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:14.207286 1269772:1269840 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:14.276381 1269766:1269805 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (117440512 bytes): memory allocation failed (ret=-12)
@@ -190,7 +190,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.296807 1269766:1269805 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:14.298709 1269766:1269805 ERROR   NRT:nrt_infodump                            Cluster ID: 11461337859022959807
 2026-Nov-11 06:27:14.300607 1269766:1269805 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:14.303060 1269766:1269805 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:14.303060 1269766:1269805 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:14.304952 1269766:1269805 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:14.307440 1269766:1269805 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -206,7 +206,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.325129 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:14.327518 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:14.328994 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:14.330713 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:14.330713 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:14.332832 1269766:1269805 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:14.334727 1269766:1269805 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:14.495281 1269769:1269920 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (117440512 bytes): memory allocation failed (ret=-12)
@@ -220,7 +220,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.516261 1269769:1269920 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:14.518496 1269769:1269920 ERROR   NRT:nrt_infodump                            Cluster ID: 11461337859022959807
 2026-Nov-11 06:27:14.520344 1269769:1269920 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:14.522862 1269769:1269920 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:14.522862 1269769:1269920 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:14.524726 1269769:1269920 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:14.527020 1269769:1269920 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -236,7 +236,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.547970 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:14.549819 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:14.551590 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:14.553600 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:14.553600 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:14.555893 1269769:1269920 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:14.558274 1269769:1269920 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:14.641884 1269772:1269840 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
@@ -256,7 +256,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.805392 1269766:1269805 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (117440512 bytes): memory allocation failed (ret=-12)
 2026-Nov-11 06:27:14.806529 1269771:1269871 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
 2026-Nov-11 06:27:14.808588 1269766:1269805 ERROR  TDRV:tensor_allocate                         Failed to allocate 117440512 bytes on DEVICE for tensor UNKNOWN.
-2026-Nov-11 06:27:14.810541 1269771:1269871 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:14.810541 1269771:1269871 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:14.816039 1269771:1269871 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:14.818130 1269771:1269871 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -272,7 +272,7 @@ If it is a third-party C/C++ Python extension, please either wrap it into a PyTo
 2026-Nov-11 06:27:14.836138 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:14.837821 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:14.839552 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:14.842134 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:14.842134 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:14.844665 1269771:1269871 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:14.846583 1269771:1269871 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:15.012916 1269768:1269902 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (536870912 bytes): memory allocation failed (ret=-12)
@@ -301,7 +301,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.224686 1269768:1269902 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:15.226343 1269768:1269902 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
 2026-Nov-11 06:27:15.228498 1269768:1269902 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:15.230798 1269768:1269902 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:15.230798 1269768:1269902 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:15.232420 1269768:1269902 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:15.234283 1269768:1269902 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
@@ -325,7 +325,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.260624 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:15.261434 1269770:1269957 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
 2026-Nov-11 06:27:15.262793 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
-2026-Nov-11 06:27:15.265472 1269770:1269957 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:15.265472 1269770:1269957 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:15.266072 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
 2026-Nov-11 06:27:15.267420 1269770:1269957 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
@@ -333,7 +333,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.270588 1269773:1269878 ERROR  TDRV:tdrv_scratchpad_reserve                 Failed to allocate virtual scratchpad!
 2026-Nov-11 06:27:15.270606 1269773:1269878 ERROR  NMGR:dlr_kelf_stage                          Failed to create logical core info for subgraph 0 to 0
 2026-Nov-11 06:27:15.270615 1269773:1269878 ERROR  NMGR:kmgr_load_nn_internal_v2                Failed to stage graph to NeuronCore
-2026-Nov-11 06:27:15.268907 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:15.268907 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:15.270474 1269770:1269957 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
 2026-Nov-11 06:27:15.272790 1269768:1269902 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:15.273813 1269770:1269957 ERROR   NRT:nrt_infodump                            Visible cores: 4
@@ -348,7 +348,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.308427 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:15.309672 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:15.311733 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:15.313576 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:15.313576 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:15.315739 1269770:1269957 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:15.317560 1269770:1269957 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:15.332484 1269766:1269805 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
@@ -384,7 +384,7 @@ ND 0 HBM 2    | 10.660GB | 1.732MB  |  0.000B  | 10.643GB |  0.000B  | 256.000B 
 2026-Nov-11 06:27:15.468540 1269773:1269878 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:15.470484 1269773:1269878 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
 2026-Nov-11 06:27:15.472481 1269773:1269878 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:15.474738 1269773:1269878 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:15.474738 1269773:1269878 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:15.476324 1269773:1269878 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:15.478152 1269773:1269878 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
@@ -399,7 +399,7 @@ ND 0 HBM 2    | 10.660GB | 1.732MB  |  0.000B  | 10.643GB |  0.000B  | 256.000B 
 2026-Nov-11 06:27:15.492553 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:15.494106 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:15.495587 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:15.497313 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:15.497313 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:15.499484 1269773:1269878 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:15.501205 1269773:1269878 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:15.547716 1269767:1269956 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (536870912 bytes): memory allocation failed (ret=-12)
@@ -421,7 +421,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.734986 1269767:1269956 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-11 06:27:15.737260 1269767:1269956 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
 2026-Nov-11 06:27:15.738688 1269767:1269956 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-11 06:27:15.740891 1269767:1269956 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-11 06:27:15.740891 1269767:1269956 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-11 06:27:15.742522 1269767:1269956 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-11 06:27:15.744786 1269767:1269956 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
@@ -436,7 +436,7 @@ python3: /opt/workspace/KaenaRuntime/tdrv/db.c:235: db_physical_core_get_mla_and
 2026-Nov-11 06:27:15.760911 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-11 06:27:15.763447 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-11 06:27:15.764933 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-11 06:27:15.766613 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:48589
+2026-Nov-11 06:27:15.766613 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:48589
 2026-Nov-11 06:27:15.768401 1269767:1269956 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-11 06:27:15.771333 1269767:1269956 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-11 06:27:15.774937 1269766:1269805 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
@@ -782,49 +782,49 @@ train.py FAILED
 Failures:
 [1]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 0 (local_rank: 0)
   exitcode  : -15 (pid: 1269766)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269766
 [2]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 1 (local_rank: 1)
   exitcode  : -15 (pid: 1269767)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269767
 [3]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 2 (local_rank: 2)
   exitcode  : -15 (pid: 1269768)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269768
 [4]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 3 (local_rank: 3)
   exitcode  : -6 (pid: 1269769)
   error_file: <N/A>
   traceback : Signal 6 (SIGABRT) received by PID 1269769
 [5]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 4 (local_rank: 4)
   exitcode  : -15 (pid: 1269770)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 1269770
 [6]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 5 (local_rank: 5)
   exitcode  : -6 (pid: 1269771)
   error_file: <N/A>
   traceback : Signal 6 (SIGABRT) received by PID 1269771
 [7]:
   time      : 2026-11-11_06:27:18
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 7 (local_rank: 7)
   exitcode  : -15 (pid: 1269773)
   error_file: <N/A>
@@ -833,7 +833,7 @@ Failures:
 Root Cause (first observed failure):
 [0]:
   time      : 2026-11-11_06:27:16
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 6 (local_rank: 6)
   exitcode  : -6 (pid: 1269772)
   error_file: <N/A>

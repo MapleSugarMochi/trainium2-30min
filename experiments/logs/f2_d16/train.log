@@ -171,7 +171,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:33.311072 878509:878548 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-10 15:56:33.312952 878509:878548 ERROR   NRT:nrt_infodump                            Cluster ID: 15696533136799037707
 2026-Nov-10 15:56:33.314806 878509:878548 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-10 15:56:33.318641 878509:878548 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.318641 878509:878548 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-10 15:56:33.320463 878509:878548 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-10 15:56:33.322648 878509:878548 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -185,7 +185,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:33.336577 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-10 15:56:33.338338 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-10 15:56:33.340645 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-10 15:56:33.342623 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.342623 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:42607
 2026-Nov-10 15:56:33.344918 878509:878548 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-10 15:56:33.347315 878509:878548 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-10 15:56:33.383638 878514:878599 ERROR  NMGR:kmgr_load_nn_post_metrics               Failed to load NN: module.neff, err: 4
@@ -202,7 +202,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:33.402906 878514:878599 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-10 15:56:33.406071 878514:878599 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
 2026-Nov-10 15:56:33.406088 878514:878599 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-10 15:56:33.406094 878514:878599 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.406094 878514:878599 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-10 15:56:33.406116 878514:878599 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-10 15:56:33.406121 878514:878599 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
@@ -219,13 +219,13 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:33.410952 878516:878623 ERROR   NRT:nrt_infodump                            CCOM version: 2.33.10.0- (compat 92)
 2026-Nov-10 15:56:33.412242 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
 2026-Nov-10 15:56:33.413742 878516:878623 ERROR   NRT:nrt_infodump                            NCFW version: 2.33.5.0 (2b1991dce9f274619aa76144e07f0a9918345423)
-2026-Nov-10 15:56:33.416021 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.416021 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:42607
 2026-Nov-10 15:56:33.416387 878516:878623 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-10 15:56:33.417720 878514:878599 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-10 15:56:33.418799 878516:878623 ERROR   NRT:nrt_infodump                            Cluster ID: 15696533136799037707
 2026-Nov-10 15:56:33.420136 878514:878599 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-10 15:56:33.421460 878516:878623 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-10 15:56:33.446736 878516:878623 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:33.446736 878516:878623 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-10 15:56:33.448295 878516:878623 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-10 15:56:33.450144 878516:878623 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_tensor_allocate
@@ -239,7 +239,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:33.462371 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-10 15:56:33.463893 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-10 15:56:33.465961 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-10 15:56:33.467775 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:33.467775 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:42607
 2026-Nov-10 15:56:33.469876 878516:878623 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-10 15:56:33.472640 878516:878623 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-10 15:56:33.843264 878511:878660 ERROR  TDRV:dmem_alloc_internal                     Failed to allocate DEVICE memory (536870912 bytes): memory allocation failed (ret=-12)
@@ -276,7 +276,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:34.060486 878511:878660 ERROR   NRT:nrt_infodump                            Instance ID: i-0505be8aed69d52e6
 2026-Nov-10 15:56:34.062184 878511:878660 ERROR   NRT:nrt_infodump                            Cluster ID: N/A
 2026-Nov-10 15:56:34.064245 878511:878660 ERROR   NRT:nrt_infodump                            Kernel: Linux 6.17.0-1019-aws #19~24.04.1-Ubuntu SMP Tue Jun 23 18:53:06 UTC 2026
-2026-Nov-10 15:56:34.066707 878511:878660 ERROR   NRT:nrt_infodump                            Nodename: ip-172-31-21-199
+2026-Nov-10 15:56:34.066707 878511:878660 ERROR   NRT:nrt_infodump                            Nodename: ip-xx-xx-xx-xx
 2026-Nov-10 15:56:34.068442 878511:878660 ERROR   NRT:nrt_infodump                            Driver version: 2.29.0.0
 
 2026-Nov-10 15:56:34.070594 878511:878660 ERROR   NRT:nrt_infodump                            Failure: NRT_RESOURCE in nrt_load_util
@@ -289,7 +289,7 @@ WARNING:torch_neuronx.python_ops.dtype_autocast:Neuron backend does not support 
 2026-Nov-10 15:56:34.083144 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_DBG_ZEROCOPY=1
 2026-Nov-10 15:56:34.084779 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_MAP_HBM=1
 2026-Nov-10 15:56:34.086554 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_DISABLE_EXECUTION_BARRIER=0
-2026-Nov-10 15:56:34.088243 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-172-31-21-199.sa-east-1.compute.internal:42607
+2026-Nov-10 15:56:34.088243 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ROOT_COMM_ID=ip-xx-xx-xx-xx.sa-east-1.compute.internal:42607
 2026-Nov-10 15:56:34.090340 878511:878660 ERROR   NRT:nrt_infodump                                NEURON_RT_ENABLE_DEVICE_MEMORY_OOM_LOG=0
 2026-Nov-10 15:56:34.092031 878511:878660 ERROR   NRT:nrt_infodump                            -------------8<-----------[ cut to here ]-----------8<------------
 2026-Nov-10 15:56:34.434725 878509:878548 ERROR   NRT:nrt_tensor_allocate                     Failed to allocate nrt tensor UNNAMED
@@ -371,49 +371,49 @@ train.py FAILED
 Failures:
 [1]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 0 (local_rank: 0)
   exitcode  : -15 (pid: 878509)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878509
 [2]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 1 (local_rank: 1)
   exitcode  : -15 (pid: 878510)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878510
 [3]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 2 (local_rank: 2)
   exitcode  : -15 (pid: 878511)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878511
 [4]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 3 (local_rank: 3)
   exitcode  : -15 (pid: 878512)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878512
 [5]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 4 (local_rank: 4)
   exitcode  : -15 (pid: 878513)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878513
 [6]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 6 (local_rank: 6)
   exitcode  : -15 (pid: 878515)
   error_file: <N/A>
   traceback : Signal 15 (SIGTERM) received by PID 878515
 [7]:
   time      : 2026-11-10_15:57:03
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 7 (local_rank: 7)
   exitcode  : -6 (pid: 878516)
   error_file: <N/A>
@@ -422,7 +422,7 @@ Failures:
 Root Cause (first observed failure):
 [0]:
   time      : 2026-11-10_15:56:35
-  host      : ip-172-31-21-199.sa-east-1.compute.internal
+  host      : ip-xx-xx-xx-xx.sa-east-1.compute.internal
   rank      : 5 (local_rank: 5)
   exitcode  : 1 (pid: 878514)
   error_file: <N/A>
